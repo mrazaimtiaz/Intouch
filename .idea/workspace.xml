@@ -22228,7 +22228,6 @@
       <change afterPath="$PROJECT_DIR$/../jdk1.8.0_181/sample/webservices/EbayServer/src/ebay/server/Ebay.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../jdk1.8.0_181/sample/webservices/EbayServer/src/ebay/server/ImageProvider.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../jdk1.8.0_181/sample/webservices/EbayServer/src/ebay/server/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22346,7 +22345,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
