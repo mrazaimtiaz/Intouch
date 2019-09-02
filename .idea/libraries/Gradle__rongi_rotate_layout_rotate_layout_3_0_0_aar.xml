@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: rongi.rotate-layout:rotate-layout:3.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aad52627213015e6c432ecf2b6892ae9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aad52627213015e6c432ecf2b6892ae9/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/rongi.rotate-layout/rotate-layout/3.0.0/c06be4fba9cb55245c4a021fa3fbee7c674482e8/rotate-layout-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
