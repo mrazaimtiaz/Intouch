@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <!--   <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chat_right_msg_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+
+        <TextView
+
+            android:id="@+id/tv_time"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="8dp"
+            android:text="11:15 PM"
+            app:layout_constraintEnd_toStartOf="@+id/user_reply_status"
+            app:layout_constraintTop_toBottomOf="@+id/chat_right_msg_text_view" />
+
+
+        <ImageView
+
+            android:id="@+id/user_reply_status"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="bottom"
+
+            android:paddingBottom="3dp"
+            android:src="@drawable/ic_done_grey_24px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="370dp" />
+
+
+        <TextView
+
+            android:id="@+id/chat_right_msg_text_view"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="Rahul "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_time" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/chat_left_msg_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/ic_sendermessage"
+        android:orientation="vertical"
+        android:visibility="gone"
+
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <TextView
+            android:id="@+id/chat_left_msg_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp" />
+
+    </LinearLayout>-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chat_right_msg_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/ic_my_message"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="@dimen/_10sdp"
+            android:text="@string/time"
+            android:textColor="@color/grey"
+            app:layout_constraintBottom_toBottomOf="@+id/chat_right_msg_text_view"
+            app:layout_constraintEnd_toStartOf="@+id/iv_done"
+            app:layout_constraintTop_toBottomOf="@+id/chat_right_msg_text_view"
+            app:layout_constraintVertical_bias="0.222" />
+
+        <TextView
+            android:id="@+id/chat_right_msg_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:fontFamily="@font/dosis"
+            android:maxWidth="@dimen/_240sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text="asdf "
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/chat_right_msg_layout"
+            app:layout_constraintStart_toStartOf="@+id/chat_right_msg_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_done"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_done_blackbg"
+            app:layout_constraintBottom_toBottomOf="@+id/time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/time" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chat_left_msg_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@drawable/ic_sendermessage"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/dosis_semibold"
+            android:text="@string/hint_name"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/chat_left_msg_layout"
+            app:layout_constraintStart_toStartOf="@+id/chat_left_msg_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/timesender"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/time"
+            app:layout_constraintBottom_toBottomOf="@+id/chat_left_msg_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chat_left_msg_text_view" />
+
+
+        <TextView
+            android:id="@+id/chat_left_msg_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:fontFamily="@font/dosis"
+            android:maxWidth="@dimen/_240sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text="asdf"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

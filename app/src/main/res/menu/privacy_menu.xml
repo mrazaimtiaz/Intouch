@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/item1"
+        android:title="dropdown"
+        android:icon="@drawable/ic_arrow_drop_down_24px"
+        app:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/item2"
+        android:title="Family"
+        android:icon="@drawable/ic_shelter_green"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/item3"
+        android:title="Relative"
+        android:icon="@drawable/ic_relative_red"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/item4"
+        android:title="Freinds"
+        android:icon="@drawable/ic_friends_blue"
+        app:showAsAction="never"></item>
+
+</menu>
+
+

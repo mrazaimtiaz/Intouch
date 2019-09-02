@@ -1,0 +1,529 @@
+<resources>
+    <string name="app_name">Intouch</string>
+    <string name="app_title">InTouch</string>
+
+
+    //database
+    //collection
+    <string name="collection_users">user</string>
+    <string name="collection_hoods">hood</string>
+    <string name="collection_avatar">avatar</string>
+    <string name="collection_member">member</string>
+    <string name="collection_houses">house</string>
+    <string name="collection_requests">request</string>
+    <string name="collection_friends">friend</string>
+    <string name="collection_relatives">relative</string>
+    <string name="collection_compliment">compliment</string>
+    <string name="collection_post">post</string>
+    <string name="collection_comment">comment</string>
+    <string name="collection_notification">notification</string>
+    <string name="collection_events">event</string>
+    <string name="collection_chat">chat</string>
+    <string name="collection_message">message</string>
+
+    //field
+    <string name="u_id">u_id</string>
+    <string name="n_id">n_id</string>
+    <string name="h_id">h_id</string>
+    <string name="r_id">r_id</string>
+    <string name="f_id">f_id</string>
+    <string name="s_id">s_id</string>
+    <string name="like">like</string>
+    <string name="field_public_avatar">public_avatar</string>
+    <string name="field_rel_avatar">rel_avatar</string>
+    <string name="field_friend_avatar">friend_avatar</string>
+    <string name="field_family_avatar">family_avatar</string>
+    <string name="comp1">comp1</string>
+    <string name="comp2">comp2</string>
+    <string name="comp3">comp3</string>
+    <string name="comp4">comp4</string>
+    <string name="comp5">comp5</string>
+    <string name="comp6">comp6</string>
+    <string name="timestamp">timestamp</string>
+    <string name="field_status">status</string>
+    <string name="field_house_image">image</string>
+    <string name="field_house_name">name</string>
+    <string name="field_house_bio">bio</string>
+    <string name="field_share_with">shareWith</string>
+
+    //request_field
+    <string name="request_send">request send</string>
+    <string name="request_accept">request accept</string>
+    <string name="request_declined">request decline</string>
+    <string name="request_accepted">request accepted</string>
+    <string name="device_token">device_token</string>
+
+    <string name="type_member">member</string>
+    <string name="type_relative">relative</string>
+    <string name="type_friend">friend</string>
+    <string name="type_knower">knower</string>
+    <string name="type_hood">hood</string>
+    <string name="type_other">public</string>
+    <string name="type_house">House</string>
+    <string name="type_people">people</string>
+
+
+    //document
+    <string name="document_profile_images">p_images</string>
+    <string name="document_member_request">member_request</string>
+
+
+    //classes
+    <string name="empty">empty</string>
+
+
+    //error
+    <string name="error_badly_formatted">The email address is badly formatted.</string>
+    <string name="error_user_not_exist">There is no user record corresponding to this identifier. The user may have been deleted.</string>
+    <string name="error_internet">A network error (such as timeout, interrupted connection or unreachable host) has occurred.</string>
+    <string name="error_password">The password is invalid or the user does not have a password.</string>
+    <string name="error_email_exist">The email address is already in use by another account.</string>
+
+    <string name="stop">.</string>
+
+
+    <string name="android_key">AIzaSyATnUkq-SW0aAJDbf1N8-8_Wqzfw1hBYVI</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+    //category
+    <string name="category_post">post</string>
+    <string name="category_event">event</string>
+    <string name="notify_type_like">like</string>
+    <string name="notify_type_comment">comment</string>
+    <string name="notify_type_accept">accept</string>
+    <string name="status_unread">unread</string>
+    <string name="status_read">read</string>
+
+    //notification
+    <string name="title_event">Event</string>
+    <string name="notification_body_like">like your post</string>
+    <string name="notification_body_accept">joined your event</string>
+    <string name="notification_body_relative_request">has accepted relative request</string>
+    <string name="notification_body_friend_request">has accepted your friend request</string>
+
+
+    <string name="notification_body_comment">has commented on your post</string>
+    <string name="title_post">Post</string>
+
+    //intent
+    <string name="activity_name">activityname</string>
+    <string name="selected_image">selected_image</string>
+    <string name="SignupActivity.class">SignupActivity.class</string>
+    <string name="NewHouseActivity.class">NewHouseActivity.class</string>
+    <string name="PostPhotoActivity.class">PostPhotoActivity.class</string>
+    <string name="SingleSharePostActivity.class">SingleSharePostActivity.class</string>
+    <string name="CreateEventActivity.class">CreateEventActivity.class</string>
+    <string name="SingleShareEventActivity.class">SingleShareEventActivity.class</string>
+    <string name="AvatarActivity.class">AvatarActivity.class</string>
+    <string name="ChangeHouseInfo.class">ChangeHouseInfo.class</string>
+    <string name="ChangeHoodInfo.class">ChangeHoodInfo.class</string>
+    <string name="user_inputs">user_inputs</string>
+    <string name="longitudeLeft">longitudeLeft</string>
+    <string name="longitudeRight">longitudeRight</string>
+    <string name="latitudeLeft">latitudeLeft</string>
+    <string name="latitudeRight">latitudeRight</string>
+    <string name="currentLatitude">Latitude</string>
+    <string name="currentLongititude">Longitude</string>
+    <string name="house_id">house_id</string>
+    <string name="intent_type">type_intent</string>
+    <string name="intent_member">intent_member</string>
+    <string name="intent_photo">intent_photo</string>
+    <string name="intent_memberid">intent_memberid</string>
+    <string name="intent_no_request">no request</string>
+    <string name="intent_chat">intent_chat</string>
+
+    <string name="individual_chat">individual chat</string>
+    <string name="group_chat">group_chat</string>
+
+
+    //shown to user
+
+    <string name="ago"> پہلے</string>
+    <string name="seconds_ago">"سیکنڈ پہلے"</string>
+    <string name="minutes_ago">" کچھ لمحے قبل "</string>
+    <string name="hours_ago">" گھنٹوں پہلے "</string>
+    <string name="days_ago">" دنوں پہلے "</string>
+    <string name="yesterday">"کل"</string>
+    <string name="s_ago">"سیکنڈ پہلے"</string>
+    <string name="m_ago">"ٹکسال پہلے"</string>
+    <string name="h_ago">" گھنٹہ پہلے"</string>
+    <string name="d_ago">"دن پہلے"</string>
+    //notifications
+    <string name="title_request">رابطے میں</string>
+    <string name="request_body"> آپ کو ایک درخواست بھیج دی ہے۔</string>
+
+
+    //toast
+    <string name="toast_zoom">مکانات لوڈ کرنے کا انتظار کریں۔ مزید مکانات کے لئے ڈریگ اور زوم۔</string>
+    <string name="toast_restart">براہ کرم ایپ کو دوبارہ شروع کریں کچھ غلط ہوا !!</string>
+    //error message
+    <string name="password_is_required">پاس ورڈ کی ضرورت ہے۔</string>
+    <string name="email_is_required">ای میل کی ضرورت ہے۔</string>
+    <string name="format_not_correct">ایک درست ای میل درج کریں</string>
+    <string name="email_not_exist">ای میل موجود نہیں ہے۔</string>
+    <string name="email_already_exist">ای میل پہلے ہی موجود ہے۔</string>
+    <string name="password_not_matched">پاس ورڈ مماثل نہیں ہے۔</string>
+    <string name="check_connection">براہ کرم اپنا انٹرنیٹ کنکشن چیک کریں اور دوبارہ کوشش کریں۔</string>
+    <string name="wait_for_request">درخواست قبول کرنے کے بعد مین اسکرین نیت ہوگی۔</string>
+
+    //signup
+    <string name="username_is_required">صارف نام ضروری ہے۔</string>
+    <string name="avatar_is_required">اوتار ضروری ہے۔</string>
+    <string name="hoodimage_is_required">ہڈ امیج کی ضرورت ہے۔</string>
+    <string name="housename_is_required">مکان کا نام ضروری ہے۔</string>
+    <string name="hoodname_is_required">ہڈ نام کی ضرورت ہے۔</string>
+    <string name="houseimage_is_required">گھر کی تصویر درکار ہے۔</string>
+    <string name="lastname_is_required">آخری نام ضروری ہے۔</string>
+    <string name="firstname_is_required">پہلا نام ضروری ہے۔</string>
+    <string name="special_character_not_allowed">خاص حروف کی اجازت نہیں ہے۔</string>
+    <string name="minimum_length_6">کم سے کم لمبائی 6 ہے۔</string>
+    <string name="minimum_length_3">کم سے کم لمبائی 3 ہے۔</string>
+    <string name="maximum_length_20">زیادہ سے زیادہ لمبائی 20۔</string>
+    <string name="maximum_length_12">زیادہ سے زیادہ لمبائی 12۔</string>
+    <string name="maximum_length_8">زیادہ سے زیادہ لمبائی 8۔</string>
+
+    <string name="some_thing_went_wrong">کچھ غلط ہو گیا</string>
+    <string name="auth_error">دستاویز حاصل کرنے میں ناکام رہا کیونکہ موکل آف لائن ہے۔</string>
+
+    //permission_required
+    <string name="permission_required">اجازت ضروری ہے۔</string>
+
+    //marker home
+    <string name="new_house">نیا مکان بنانے کے لئے کلک کریں۔</string>
+
+
+    //introduction
+    <string name="btn_login">میں لاگ ان کریں</string>
+    <string name="btn_signup">سائن اپ کریں</string>
+    <string name="text_map_oriented_interface">نقشہ پر مبنی \ n انٹرفیس۔</string>
+    <string name="keep_you">آپ کو رکھتا ہے</string>
+    <string name="in_touch">رابطے میں</string>
+    <string name="with_your_knowers">اپنے جاننے والوں کے ساتھ</string>
+
+    <string name="family">کنبہ۔</string>
+    <string name="relative">رشتہ دار۔</string>
+    <string name="friend">دوست۔</string>
+    <string name="knowers">جاننے والے۔</string>
+    <string name="hood">ہوڈ۔</string>
+    <string name="public_">عوام</string>
+
+    <string name="title_share">واقعہ اور پوسٹ شیئر کریں</string>
+    <string name="title_folk">مختلف لوگوں کے ساتھ</string>
+
+    <string name="protect_privacy_title">اپنی رازداری کی حفاظت کریں۔</string>
+    <string name="avatar_title"> اپنے جاننے والوں کے لئے مختلف اوتار رکھیں۔</string>
+
+
+    //login activity
+    <string name="background_image">پس منظر کی تصویر</string>
+    <string name="intouch_logo">لوگو کی حوصلہ افزائی کریں</string>
+    <string name="welcome_back">خوش آمدید!!!</string>
+
+    <string name="line">لائن</string>
+    <string name="hint_pass">*********</string>
+
+    <string name="forgot_password">اپنا پاس ورڈ بھول گئے</string>
+    <string name="dont_have_account">کیا آپ کا اکاؤنٹ نہیں ہے؟ یہاں کلک کریں</string>
+
+    <string name="email">ای میل</string>
+    <string name="password">پاس ورڈ</string>
+
+
+    //forgot password
+    <string name="title_forgotpassword">پاسورڈ بھول گے</string>
+    <string name="recieve_instruction">ای میل پر ہدایات حاصل کرنے کے لئے \ n ری سیٹ کے بٹن پر کلک کریں۔</string>
+    <string name="have_an_account"> کیا آپ کا اکاؤنٹ ہے؟ یہاں کلک کریں</string>
+    <string name="btn_reset">دوبارہ تلاش کریں۔</string>
+
+
+    //signup
+    <string name="title_signup">سائن اپ کریں۔</string>
+    <string name="welcome">خوش آمدید !!!</string>
+    <string name="avatar">اوتار</string>
+    <string name="name">نام۔</string>
+    <string name="firstname">پہلا نام</string>
+    <string name="lastname">آخری نام</string>
+    <string name="username">صارف نام</string>
+    <string name="hint_name">محمد رضا۔</string>
+    <string name="hint_first_name">محمد</string>
+    <string name="hint_last_name">ریس</string>
+
+    <string name="hint_username">m.razaimtiaz</string>
+
+    <string name="btn_next">اگلے</string>
+    <string name="storage_permission">اسٹوریج کی اجازت درکار ہے۔ سیٹنگیں کھولیں؟</string>
+    <string name="toast_restart_gps">GPS کی ترتیبات کو لوڈ کرنے کے لئے ایپلی کیشن کو دوبارہ شروع کریں۔</string>
+
+    //choose your house
+    <string name="title_choose_your_house">اپنا گھر منتخب کریں۔</string>
+    <string name="internet_connection">براہ کرم اپنے انٹرنیٹ کنکشن کی جانچ کریں \ n اور دوبارہ کوشش کریں۔</string>
+    <string name="btn_tryagain">دوبارہ کوشش کریں</string>
+    <string name="btn_opensettings">سیٹنگیں کھولیں۔</string>
+    <string name="permission_message">آگے بڑھنے کے لئے مقام کی اجازت درکار ہے !!!</string>
+    <string name="btn_gps">GPS کو فعال کریں۔</string>
+    <string name="gps_message">اس ایپلی کیشن کو GPS کی ضرورت ہے proceed n آگے بڑھنے کے لئے !!!</string>
+
+    //create new house
+    <string name="title_create_new_house">نیا مکان بنائیں۔</string>
+    <string name="house_image">ہاؤس امیج منتخب کریں۔</string>
+    <string name="house_name">گھر کا نام</string>
+    <string name="hint_house_name">شا ہاؤس۔</string>
+
+    <string name="hood_image">ہڈ امیج کو تجویز کریں۔</string>
+    <string name="hood_name">ہوڈ کا نام۔</string>
+    <string name="hint_hood_name">مزنگ</string>
+    <string name="btn_create">بنانا</string>
+    <string name="optional">(اختیاری)</string>
+
+
+    //houseinfo
+    <string name="title_house_info">گھر کی معلومات</string>
+    <string name="house_bio">متحد ہوں گے تو قائم رہیں گے، تقسیم ہوں گے تو شکست خوردہ ہوں گے</string>
+    <string name="house_member">ہاؤس ممبران۔</string>
+
+    <string name="btn_member_request">ممبر کی درخواست بھیجیں۔</string>
+    <string name="btn_cancel_request">درخواست منسوخ</string>
+    <string name="member_name">نام۔</string>
+
+
+    //mainhouseinfo
+    <string name="post">پوسٹ بنائیں۔</string>
+    <string name="event">واقعہ بنائیں۔</string>
+    <string name="broke">ٹوٹ گیا۔</string>
+    <string name="message">پیغام۔</string>
+    <string name="btn_relative_request">متعلقہ درخواست بھیجیں۔</string>
+    <string name="hood_info">ہڈ کی معلومات۔</string>
+    <string name="dialog_broke">کیا آپ واقعی اپنے رشتہ دار مکان کو توڑنا چاہتے ہیں؟</string>
+
+
+    //hoodinfo
+    <string name="title_hood_info">ہڈ کی معلومات۔</string>
+    <string name="hood_bio">متحد ہوں گے تو قائم رہیں گے، تقسیم ہوں گے تو شکست خوردہ ہوں گے</string>
+    <string name="hood_member">ہڈ ممبران۔</string>
+
+    //hood_section
+    <string name="edit">ترمیم</string>
+    <string name="update">اپ ڈیٹ</string>
+    <string name="compliments">تعریفیں۔</string>
+    <string name="fallowers">فیلرز۔</string>
+
+    //member_info
+    <string name="title_member_info">ممبر کی معلومات</string>
+    <string name="btn_friend_request">دوست کی درخواست بھیجیں۔</string>
+
+
+    //member_section
+    <string name="view_post">پوسٹ دیکھیں۔</string>
+    <string name="view_event">واقعہ دیکھیں۔</string>
+    <string name="dialog_broke_friend">کیا آپ واقعی اپنے دوست کے ساتھ توڑنا چاہتے ہیں؟</string>
+
+
+    //fallowers activity
+    <string name="title_fallower">فیلرز۔</string>
+    <string name="on_hood_name">مزنگ پر</string>
+    <string name="nothing_to_show">دکھانے کے لئے کچھ نہیں !!</string>
+    <string name="on">پر</string>
+
+
+    //compliments activity
+    <string name="title_compliments">تعریفیں۔</string>
+
+    <string name="beautiful_place">دیکھنے کا خوبصورت مقام۔</string>
+    <string name="welcoming_and_loving">خیرمقدم۔</string>
+    <string name="virtous_and_clean">عمدہ اور صاف ستھرا علاقہ۔</string>
+    <string name="affordable_place">سستی جگہ۔</string>
+    <string name="superior_standard">اعلی معیار</string>
+    <string name="admirable_hospitality">قابل ستائش مہمان نوازی۔</string>
+    <string name="number">12۔</string>
+
+
+    //post
+    <string name="time">12 h</string>
+    <string name="comment">میں نے دیکھا ہے کہ ایک بہترین بلے باز جب سے میں نے کرکٹ دیکھنا شروع کی ہے۔</string>
+    <string name="nothing_to_show_add_post">دکھانے کے لئے کچھ نہیں !!! post n نیچے کلک کرکے کچھ پوسٹ شامل کریں۔</string>
+
+
+    //viewpost
+    <string name="title_view_post">پوسٹ دیکھیں۔</string>
+    <string name="reply">جواب دیں</string>
+
+    <string name="write_a_comment">اپنی رائے لکھیں...</string>
+
+
+    //postphoto
+    <string name="title_post_photo">تصویر پوسٹ کریں۔</string>
+    <string name="say_something">کچھ بولیں...</string>
+
+
+    //sharewith
+    <string name="title_sharewith">کے ساتھ اشتراک کریں</string>
+    <string name="share">بانٹیں</string>
+    <string name="privacy">رازداری</string>
+
+
+    //event
+    <string name="category">قسم</string>
+    <string name="at">پر</string>
+    <string name="attendent">توقع</string>
+    <string name="place_name">جنوبی ایشیاء یونیورسٹی</string>
+    <string name="by">بذریعہ</string>
+    <string name="event_time">12:00 شام</string>
+    <string name="date">12-04-2019۔</string>
+    <string name="accept">قبول کریں۔</string>
+    <string name="accepted">قبول کر لیا۔</string>
+    <string name="reject">مسترد کریں۔</string>
+    <string name="declined">رد۔</string>
+    <string name="joined">شامل ہوئے۔</string>
+    <string name="nothing_to_show_add_event">دکھانے کے لئے کچھ نہیں !!! event n نیچے کلک کرکے کچھ پروگرام شامل کریں۔</string>
+
+    //createevent
+    <string name="title_create_event">واقعہ بنائیں۔</string>
+    <string name="write_place">جگہ .....</string>
+    <string name="choose_category">زمرہ منتخب کریں۔</string>
+
+    <string-array name="category_events">
+        <item>دعوت کے بعد</item>
+        <item>ایوارڈ تقریب۔</item>
+        <item>بسنت</item>
+        <item>بورڈ کے اجلاس</item>
+        <item>بیچلر پارٹی</item>
+        <item>بزنس ڈنر۔</item>
+        <item>بی بی کیو پارٹی۔</item>
+        <item>سالگرہ کی تقریب</item>
+        <item>چاند رات۔</item>
+        <item>ثقافتی واقعہ</item>
+        <item>کانفرنس۔</item>
+        <item>چیریٹی نیلامی</item>
+        <item>پارٹی کاسٹ کریں۔</item>
+        <item>کارنیول پارٹی</item>
+        <item>کرسمس پارٹی</item>
+        <item>لباس پارٹی۔</item>
+        <item>رات کے کھانے کی تقریب</item>
+        <item>ڈنر اور تھیٹر۔</item>
+        <item>دیوالی۔</item>
+        <item>رقصی اجتماع</item>
+        <item>ایسٹر پارٹی</item>
+        <item>عیدالفطر کا واقعہ۔</item>
+        <item>عید الاضحی کا واقعہ۔</item>
+        <item>خاندانی واقعہ</item>
+        <item>میلہ۔</item>
+        <item>کھیل ہی کھیل میں نائٹ پارٹی</item>
+        <item>گائے فوکس نائٹ</item>
+        <item>اجتماع۔</item>
+        <item>ہالووین پارٹی</item>
+        <item>ہاؤس وارمنگ پارٹی۔</item>
+        <item>ہولی</item>
+        <item>ہنوکا</item>
+        <item>یوم آزادی</item>
+        <item>حوصلہ افزا واقعہ</item>
+        <item>مزدورں کادن</item>
+        <item>مڈسمر حوا۔</item>
+        <item>ملاقاتیں۔</item>
+        <item>نئے سال کی شام پارٹی</item>
+        <item>نیٹ ورکنگ واقعات</item>
+        <item>آفس پارٹی۔</item>
+        <item>افتتاحی تقریب</item>
+        <item>پری پارٹی</item>
+        <item>یوم پاکستان۔</item>
+        <item>پارٹی منصوبہ</item>
+        <item>سیاسی خانہ بدوش۔</item>
+        <item>پروڈکٹ کا آغاز</item>
+        <item>پزا پارٹی۔</item>
+        <item>پول پارٹی</item>
+        <item>ذاتی واقعہ</item>
+        <item>فسح۔</item>
+        <item>استقبال</item>
+        <item>مذہبی واقعہ۔</item>
+        <item>سلیپ اوور پارٹی۔</item>
+        <item>سیمینار۔</item>
+        <item>سوسائٹی کی گیندیں۔</item>
+        <item>شیئردارک ملاقاتیں۔</item>
+        <item>اسکول۔</item>
+        <item>جشن</item>
+        <item>اسپورٹس پارٹی</item>
+        <item>چائے پارٹی۔</item>
+        <item>یوم تشکر</item>
+        <item>VIP واقعات</item>
+        <item>شادی کی استقبالیہ تقریب</item>
+        <item>شادی کی سالگرہ۔</item>
+        <item>یوم اس استقلال۔</item>
+        <item>دوسرے</item>
+    </string-array>
+
+    <string name="selecttime">وقت منتخب کریں۔</string>
+
+    <string name="string_date">تاریخ</string>
+    <string name="string_time">وقت</string>
+
+    <string name="invitation">دعوت نامہ۔</string>
+    <string name="create_event">واقعہ بنائیں۔</string>
+
+    //viewevent
+    <string name="title_view_event">واقعہ دیکھیں۔</string>
+
+    //joined
+    <string name="time_stamp">21 جولائی 3:56 بجے۔</string>
+    <string name="joined_total">12 شامل ہوئے۔</string>
+
+
+    //explore
+    <string name="fallow">نگلنا۔</string>
+    <string name="fallowing">نگلنا۔</string>
+    <string name="search">تلاش کریں۔</string>
+
+    //account
+    <string name="requests">درخواستیں۔</string>
+    <string name="settings">ترتیبات۔</string>
+
+    //request
+    <string name="decline">رد</string>
+
+    //mypost
+    <string name="my_post">میری پوسٹس</string>
+
+    //myevent
+    <string name="my_event">میرے واقعات</string>
+
+    <string name="delete_account">کھاتہ مٹا دو</string>
+    <string name="dialog_delete">کیا آپ واقعی اپنا اکاؤنٹ حذف کرنا چاہتے ہیں؟</string>
+
+
+    //chat
+    <string name="chat">بلیوں</string>
+    <string name="title_select_chat">چیٹ منتخب کریں۔</string>
+    <string name="nothing_to_show_add_message">دکھانے کے لئے کچھ نہیں !!! Message n نیا پیغام بھیجنے کے لئے نیچے کلک کریں۔</string>
+
+
+    <string name="chat_message">میرے خیال میں اتنا برابر ہے سوچو گا نہیں ہے….</string>
+
+    <string name="account">اکاؤنٹ</string>
+    <string name="Avatar">اوتار</string>
+    <string name="logout">لاگ آوٹ</string>
+
+    //account edit
+    <string name="account_info">اکاونٹ کی معلومات</string>
+    <string name="bio">بایو</string>
+    <string name="change_password">پاس ورڈ تبدیل کریں</string>
+    <string name="dialog_password">میل اور سائن آؤٹ کے ذریعہ اپنا پاس ورڈ دوبارہ ترتیب دینے کے لئے ہاں پر کلک کریں۔</string>
+    <string name="dialog_logout">کیا آپ واقعی لاگ آؤٹ کرنا چاہتے ہیں؟</string>
+
+    <string name="change_house_info">گھر کی معلومات تبدیل کریں۔</string>
+    <string name="change_hood_info">ہڈ کی معلومات تبدیل کریں۔</string>
+
+    <string name="write_a_message">پیغام لکھیں ...</string>
+    //avatar
+    <string name="use_one_avatar">ون اوتار استعمال کریں۔</string>
+    <string name="use_three_avatar">چار اوتار استعمال کریں۔</string>
+    <string name="family_avatar">کنبہ والے اس اوتار کو دیکھیں گے۔</string>
+    <string name="relative_avatar">رشتہ دار یہ اوتار دیکھیں گے۔</string>
+    <string name="friend_avatar">فریندز یہ اوتار دیکھیں گے۔</string>
+    <string name="public_avatar">عوام اس اوتار کو دیکھیں گے۔</string>
+    <string name="everyone_avatar">ہر ایک اس اوتار کو دیکھے گا۔</string>
+
+    <string name="upload_avatar">اوتار اپ لوڈ کریں۔</string>
+
+
+    <string name="notification">نوٹیفیکیشن</string>
+</resources>

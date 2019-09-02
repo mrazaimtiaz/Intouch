@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/black_border_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/profileToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/dosis_medium"
+                    android:text="@string/in_touch"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline"
+                    app:layout_constraintStart_toEndOf="@+id/iv_intouch_logo"
+                    app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_intouch_logo"
+                    android:layout_width="@dimen/_33sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_intouchlogo"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_red_notification"
+                    android:visibility="gone"
+                    android:layout_width="@dimen/_5sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:src="@drawable/ic_red_dot"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_notification"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_notification"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/iv_notification"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_notification"
+                    app:layout_constraintVertical_bias="0.096" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_red_request"
+                    android:visibility="gone"
+                    android:layout_width="@dimen/_5sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_red_dot"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_account"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_account"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/iv_account"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_account"
+                    app:layout_constraintVertical_bias="0.733" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_account"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/ic_account_circle_24px"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_notification"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:src="@drawable/ic_notifications_24px"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_account"
+                    app:layout_constraintTop_toTopOf="@+id/guideline"
+                    app:layout_constraintVertical_bias="0.617" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_explore"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:src="@drawable/ic_explore_24px"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_message"
+                    app:layout_constraintTop_toTopOf="@+id/guideline"
+                    app:layout_constraintVertical_bias="0.617" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_message"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:src="@drawable/ic_message_24px"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_notification"
+                    app:layout_constraintTop_toTopOf="@+id/guideline"
+                    app:layout_constraintVertical_bias="0.617" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="20dp"
+                    app:layout_constraintGuide_percent="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+
+        android:id="@+id/view_pager"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_layout">
+
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.tabs.TabLayout
+
+        android:id="@+id/tab_layout"
+        android:alpha="0.5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_pager"
+        app:layout_constraintTop_toBottomOf="@+id/view_pager"
+        app:layout_constraintVertical_bias="0.571"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorHeight="0dp"
+        app:tabMaxWidth="@dimen/_35sdp"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

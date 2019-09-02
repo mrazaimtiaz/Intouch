@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Signup.GalleryActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rellayout1">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/black_border_bottom">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/profileToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/ivCloseShare"
+                        android:src="@drawable/ic_chevron_left_24px"
+                        />
+
+                    <Spinner
+                        android:id="@+id/spinnerDirectory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/ivCloseShare"
+                        android:gravity="center_vertical"
+                        android:text="Gallery"
+                        android:textColor="@color/black"
+                        android:textSize="20sp">
+
+                    </Spinner>
+
+                    <TextView
+                        android:id="@+id/tvNext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:fontFamily="@font/dosis"
+                        android:text="@string/btn_next"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/_11ssp" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="100"
+        android:orientation="vertical"
+        android:layout_below="@id/rellayout1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/galleryImageView"
+                android:scaleType="centerCrop" />
+
+            <ProgressBar
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/progressBar"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:id="@+id/gridView"
+            android:numColumns="3"
+            android:verticalSpacing="5.5dp"
+            android:horizontalSpacing="5.5dp"
+            android:stretchMode="none"
+            android:gravity="center"
+            android:layout_marginTop="1dp"></GridView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

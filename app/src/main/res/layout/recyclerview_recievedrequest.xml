@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_16sdp"
+    android:background="@drawable/lightgreen_border_bottom">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_member_avatar"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/ic_grey_bg"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/black"/>
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/dosis_semibold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintStart_toEndOf="@+id/iv_member_avatar" />
+
+    <ImageView
+        android:id="@+id/iv_type"
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:fontFamily="@font/dosis_light"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintStart_toEndOf="@+id/iv_type"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_request_type"
+        android:layout_width="@dimen/_22sdp"
+        android:layout_height="@dimen/_22sdp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_request_type"
+        app:layout_constraintEnd_toEndOf="@+id/tv_request_type"
+        app:layout_constraintStart_toStartOf="@+id/tv_request_type" />
+
+    <TextView
+        android:id="@+id/tv_request_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/dosis"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="30dp"/>
+
+    <Button
+        android:id="@+id/btn_accept"
+        android:layout_width="@dimen/_67sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_60sdp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_btn_accept"
+        android:paddingEnd="@dimen/_8sdp"
+        android:text="@string/accept"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_member_avatar" />
+
+    <Button
+        android:id="@+id/btn_accept_clicked"
+        android:visibility="gone"
+        android:layout_width="@dimen/_67sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_btn_accept"
+        android:paddingEnd="@dimen/_8sdp"
+        android:text="@string/accepted"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_member_avatar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/btn_decline_checked"
+        android:layout_width="@dimen/_67sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_btn_decline"
+        android:paddingEnd="@dimen/_8sdp"
+        android:text="@string/declined"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_accept"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_decline"
+        android:layout_width="@dimen/_67sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_60sdp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_btn_decline"
+        android:paddingEnd="@dimen/_8sdp"
+        android:text="@string/decline"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_accept"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

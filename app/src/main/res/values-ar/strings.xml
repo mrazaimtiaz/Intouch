@@ -1,0 +1,530 @@
+<resources>
+    <string name="app_name">Intouch</string>
+    <string name="app_title">InTouch</string>
+
+
+    //database
+    //collection
+    <string name="collection_users">user</string>
+    <string name="collection_hoods">hood</string>
+    <string name="collection_avatar">avatar</string>
+    <string name="collection_member">member</string>
+    <string name="collection_houses">house</string>
+    <string name="collection_requests">request</string>
+    <string name="collection_friends">friend</string>
+    <string name="collection_relatives">relative</string>
+    <string name="collection_compliment">compliment</string>
+    <string name="collection_post">post</string>
+    <string name="collection_comment">comment</string>
+    <string name="collection_notification">notification</string>
+    <string name="collection_events">event</string>
+    <string name="collection_chat">chat</string>
+    <string name="collection_message">message</string>
+
+    //field
+    <string name="u_id">u_id</string>
+    <string name="n_id">n_id</string>
+    <string name="h_id">h_id</string>
+    <string name="r_id">r_id</string>
+    <string name="f_id">f_id</string>
+    <string name="s_id">s_id</string>
+    <string name="like">like</string>
+    <string name="field_public_avatar">public_avatar</string>
+    <string name="field_rel_avatar">rel_avatar</string>
+    <string name="field_friend_avatar">friend_avatar</string>
+    <string name="field_family_avatar">family_avatar</string>
+    <string name="comp1">comp1</string>
+    <string name="comp2">comp2</string>
+    <string name="comp3">comp3</string>
+    <string name="comp4">comp4</string>
+    <string name="comp5">comp5</string>
+    <string name="comp6">comp6</string>
+    <string name="timestamp">timestamp</string>
+    <string name="field_status">status</string>
+    <string name="field_house_image">image</string>
+    <string name="field_house_name">name</string>
+    <string name="field_house_bio">bio</string>
+    <string name="field_share_with">shareWith</string>
+
+    //request_field
+    <string name="request_send">request send</string>
+    <string name="request_accept">request accept</string>
+    <string name="request_declined">request decline</string>
+    <string name="request_accepted">request accepted</string>
+    <string name="device_token">device_token</string>
+
+    <string name="type_member">member</string>
+    <string name="type_relative">relative</string>
+    <string name="type_friend">friend</string>
+    <string name="type_knower">knower</string>
+    <string name="type_hood">hood</string>
+    <string name="type_other">public</string>
+    <string name="type_house">House</string>
+    <string name="type_people">people</string>
+
+
+    //document
+    <string name="document_profile_images">p_images</string>
+    <string name="document_member_request">member_request</string>
+
+
+    //classes
+    <string name="empty">empty</string>
+
+
+    //error
+    <string name="error_badly_formatted">The email address is badly formatted.</string>
+    <string name="error_user_not_exist">There is no user record corresponding to this identifier. The user may have been deleted.</string>
+    <string name="error_internet">A network error (such as timeout, interrupted connection or unreachable host) has occurred.</string>
+    <string name="error_password">The password is invalid or the user does not have a password.</string>
+    <string name="error_email_exist">The email address is already in use by another account.</string>
+
+    <string name="stop">.</string>
+
+
+    <string name="android_key">AIzaSyATnUkq-SW0aAJDbf1N8-8_Wqzfw1hBYVI</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+    //category
+    <string name="category_post">post</string>
+    <string name="category_event">event</string>
+    <string name="notify_type_like">like</string>
+    <string name="notify_type_comment">comment</string>
+    <string name="notify_type_accept">accept</string>
+    <string name="status_unread">unread</string>
+    <string name="status_read">read</string>
+
+    //notification
+    <string name="title_event">Event</string>
+    <string name="notification_body_like">like your post</string>
+    <string name="notification_body_accept">joined your event</string>
+    <string name="notification_body_relative_request">has accepted relative request</string>
+    <string name="notification_body_friend_request">has accepted your friend request</string>
+
+
+    <string name="notification_body_comment">has commented on your post</string>
+    <string name="title_post">Post</string>
+
+    //intent
+    <string name="activity_name">activityname</string>
+    <string name="selected_image">selected_image</string>
+    <string name="SignupActivity.class">SignupActivity.class</string>
+    <string name="NewHouseActivity.class">NewHouseActivity.class</string>
+    <string name="PostPhotoActivity.class">PostPhotoActivity.class</string>
+    <string name="SingleSharePostActivity.class">SingleSharePostActivity.class</string>
+    <string name="CreateEventActivity.class">CreateEventActivity.class</string>
+    <string name="SingleShareEventActivity.class">SingleShareEventActivity.class</string>
+    <string name="AvatarActivity.class">AvatarActivity.class</string>
+    <string name="ChangeHouseInfo.class">ChangeHouseInfo.class</string>
+    <string name="ChangeHoodInfo.class">ChangeHoodInfo.class</string>
+    <string name="user_inputs">user_inputs</string>
+    <string name="longitudeLeft">longitudeLeft</string>
+    <string name="longitudeRight">longitudeRight</string>
+    <string name="latitudeLeft">latitudeLeft</string>
+    <string name="latitudeRight">latitudeRight</string>
+    <string name="currentLatitude">Latitude</string>
+    <string name="currentLongititude">Longitude</string>
+    <string name="house_id">house_id</string>
+    <string name="intent_type">type_intent</string>
+    <string name="intent_member">intent_member</string>
+    <string name="intent_photo">intent_photo</string>
+    <string name="intent_memberid">intent_memberid</string>
+    <string name="intent_no_request">no request</string>
+    <string name="intent_chat">intent_chat</string>
+
+    <string name="individual_chat">individual chat</string>
+    <string name="group_chat">group_chat</string>
+
+
+    //shown to user
+
+    <string name="ago"> منذ</string>
+    <string name="seconds_ago">" منذ ثوانى "</string>
+    <string name="minutes_ago">" دقائق مضت "</string>
+    <string name="hours_ago">" منذ ساعات "</string>
+    <string name="days_ago">" أيام مضت "</string>
+    <string name="yesterday">" في الامس "</string>
+    <string name="s_ago">"قبل ثانية"</string>
+    <string name="m_ago">"قبل النعناع"</string>
+    <string name="h_ago">" منذ ساعة"</string>
+    <string name="d_ago">" منذ يوم"</string>
+    //notifications
+    <string name="title_request">على اتصال</string>
+    <string name="request_body"> أرسل لك طلب</string>
+
+
+    //toast
+    <string name="toast_zoom">انتظر لتحميل Houses.Drag والتكبير لمزيد من المنازل</string>
+    <string name="toast_restart">الرجاء إعادة تشغيل التطبيق حدث خطأ !!</string>
+    //error message
+    <string name="password_is_required">كلمة المرور مطلوبة</string>
+    <string name="email_is_required">البريد الالكتروني مطلوب</string>
+    <string name="format_not_correct">يرجى إدخال البريد الإلكتروني الصحيح</string>
+    <string name="email_not_exist">البريد الإلكتروني غير موجود</string>
+    <string name="email_already_exist">البريد الالكتروني موجود بالفعل</string>
+    <string name="password_not_matched">كلمة المرور غير متطابقة</string>
+    <string name="check_connection">يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى</string>
+    <string name="wait_for_request">سوف الشاشة الرئيسية نية بعد طلب قبول</string>
+
+    //signup
+    <string name="username_is_required">اسم المستخدم مطلوب</string>
+    <string name="avatar_is_required">الصورة الرمزية مطلوبة</string>
+    <string name="hoodimage_is_required">مطلوب غطاء محرك السيارة</string>
+    <string name="housename_is_required">اسم البيت مطلوب</string>
+    <string name="hoodname_is_required">اسم الغطاء</string>
+    <string name="houseimage_is_required">مطلوب صورة المنزل</string>
+    <string name="lastname_is_required">اسم العائلة مطلوب</string>
+    <string name="firstname_is_required">الإسم الأول مطلوب</string>
+    <string name="special_character_not_allowed">يمنع استعمال الرموز</string>
+    <string name="minimum_length_6">الحد الأدنى للطول هو 6</string>
+    <string name="minimum_length_3">الحد الأدنى للطول هو 3</string>
+    <string name="maximum_length_20">الحد الأقصى للطول 20</string>
+    <string name="maximum_length_12">الحد الأقصى للطول 12</string>
+    <string name="maximum_length_8">الحد الأقصى للطول 8</string>
+
+    <string name="some_thing_went_wrong">هناك خطأ ما</string>
+    <string name="auth_error">أخفق الحصول على المستند لأن العميل غير متصل.</string>
+
+    //permission_required
+    <string name="permission_required">إذن مطلوب</string>
+
+    //marker home
+    <string name="new_house">انقر لإنشاء منزل جديد</string>
+
+
+    //introduction
+    <string name="btn_login">تسجيل الدخول</string>
+    <string name="btn_signup">سجل</string>
+    <string name="text_map_oriented_interface">خريطة المنحى \ ن واجهة</string>
+    <string name="keep_you">يبقيك</string>
+    <string name="in_touch">على اتصال</string>
+    <string name="with_your_knowers">مع معلميك</string>
+
+    <string name="family">عائلة</string>
+    <string name="relative">نسبيا</string>
+    <string name="friend">صديق</string>
+    <string name="knowers">Knowers</string>
+    <string name="hood">غطاء محرك السيارة</string>
+    <string name="public_">عامة</string>
+
+    <string name="title_share">حصة الحدث والبريد</string>
+    <string name="title_folk">مع مختلف الناس</string>
+
+    <string name="protect_privacy_title">حماية خصوصيتك</string>
+    <string name="avatar_title"> وضع الصورة الرمزية مختلفة للمعلمين الخاص بك</string>
+
+
+    //login activity
+    <string name="background_image">الصورة الخلفية</string>
+    <string name="intouch_logo">Intouch الشعار</string>
+    <string name="welcome_back">مرحبا بعودتك!!!</string>
+
+    <string name="line">خط</string>
+    <string name="hint_pass">*********</string>
+
+    <string name="forgot_password">نسيت رقمك السري</string>
+    <string name="dont_have_account">ليس لديك حساب \؟ انقر هنا</string>
+
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمه السر</string>
+
+
+    //forgot password
+    <string name="title_forgotpassword">هل نسيت كلمة المرور</string>
+    <string name="recieve_instruction">لتلقي التعليمات على البريد الإلكتروني \ n انقر على زر إعادة الضبط</string>
+    <string name="have_an_account"> لديك حساب \؟ انقر هنا</string>
+    <string name="btn_reset">إعادة تعيين</string>
+
+
+    //signup
+    <string name="title_signup">سجل</string>
+    <string name="welcome">أهلا بك !!!</string>
+    <string name="avatar">الصورة الرمزية لل</string>
+    <string name="name">اسم</string>
+    <string name="firstname">الاسم الاول</string>
+    <string name="lastname">الكنية</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="hint_name">Mohammad Raza</string>
+    <string name="hint_first_name">Mohammad</string>
+    <string name="hint_last_name">سباق</string>
+
+    <string name="hint_username">m.razaimtiaz</string>
+
+    <string name="btn_next">التالى</string>
+    <string name="storage_permission">إذن التخزين المطلوبة. أفتح الإعدادات؟</string>
+    <string name="toast_restart_gps">أعد تشغيل التطبيق لتحميل إعدادات GPS</string>
+
+    //choose your house
+    <string name="title_choose_your_house">اختر منزلك</string>
+    <string name="internet_connection">يرجى التحقق من اتصالك بالإنترنت \ n والمحاولة مرة أخرى</string>
+    <string name="btn_tryagain">حاول مجددا</string>
+    <string name="btn_opensettings">أفتح الإعدادات</string>
+    <string name="permission_message">إذن الموقع مطلوب \ n للمتابعة !!!</string>
+    <string name="btn_gps">تمكين GPS</string>
+    <string name="gps_message">هذا التطبيق مطلوب GPS \ n للمتابعة !!!</string>
+
+    //create new house
+    <string name="title_create_new_house">إنشاء منزل جديد</string>
+    <string name="house_image">اختيار صورة البيت</string>
+    <string name="house_name">اسم المنزل</string>
+    <string name="hint_house_name">شا البيت</string>
+
+    <string name="hood_image">تشير صورة هود</string>
+    <string name="hood_name">اسم هود</string>
+    <string name="hint_hood_name">Mozang</string>
+    <string name="btn_create">خلق</string>
+    <string name="optional">(اختياري)</string>
+
+
+    //houseinfo
+    <string name="title_house_info">معلومات البيت</string>
+    <string name="house_bio">اتحدوا فسنسقط اذا تفرقنا</string>
+    <string name="house_member">أعضاء البيت</string>
+
+    <string name="btn_member_request">إرسال طلب عضو</string>
+    <string name="btn_cancel_request">إلغاء الطلب</string>
+    <string name="member_name">اسم</string>
+
+
+    //mainhouseinfo
+    <string name="post">إنشاء مشاركة</string>
+    <string name="event">انشاء حدث</string>
+    <string name="broke">حطم</string>
+    <string name="message">رسالة</string>
+    <string name="btn_relative_request">إرسال طلب نسبي</string>
+    <string name="hood_info">غطاء محرك السيارة</string>
+    <string name="dialog_broke">هل أنت متأكد أنك تريد الانفصال عن منزل قريبك؟</string>
+
+
+    //hoodinfo
+    <string name="title_hood_info">غطاء محرك السيارة</string>
+    <string name="hood_bio">اتحدوا فسنسقط اذا تفرقنا</string>
+    <string name="hood_member">هود الأعضاء</string>
+
+    //hood_section
+    <string name="edit">تصحيح</string>
+    <string name="update">تحديث</string>
+    <string name="compliments">المجاملات</string>
+    <string name="fallowers">Fallowers</string>
+
+    //member_info
+    <string name="title_member_info">معلومات العضو</string>
+    <string name="btn_friend_request">ارسل طلب صداقة</string>
+
+
+    //member_section
+    <string name="view_post">رأي آخر</string>
+    <string name="view_event">عرض الحدث</string>
+    <string name="dialog_broke_friend">هل أنت متأكد أنك تريد الانفصال مع صديقك؟</string>
+
+
+    //fallowers activity
+    <string name="title_fallower">Fallowers</string>
+    <string name="on_hood_name">على موزانغ</string>
+    <string name="nothing_to_show">لا شيء لإظهار!</string>
+    <string name="on">على</string>
+
+
+    //compliments activity
+    <string name="title_compliments">المجاملات</string>
+
+    <string name="beautiful_place">مكان جميل للزيارة</string>
+    <string name="welcoming_and_loving">الترحيب</string>
+    <string name="virtous_and_clean">فاضلة ونظيفة المنطقة</string>
+    <string name="affordable_place">مكان بأسعار معقولة</string>
+    <string name="superior_standard">معيار متفوقة</string>
+    <string name="admirable_hospitality">الضيافة الرائعة</string>
+    <string name="number">12</string>
+
+
+    //post
+    <string name="time">12 ساعة</string>
+    <string name="comment">واحدة من أفضل رجل المضرب رأيته في حياتي. منذ أن بدأت بمشاهدة لعبة الكريكيت</string>
+    <string name="nothing_to_show_add_post">لا شيء لإظهار! \ n أضف بعض المنشورات عن طريق النقر أدناه</string>
+
+
+    //viewpost
+    <string name="title_view_post">رأي آخر</string>
+    <string name="reply">الرد</string>
+
+    <string name="write_a_comment">أكتب تعليقا...</string>
+
+
+    //postphoto
+    <string name="title_post_photo">نشر الصور</string>
+    <string name="say_something">قل شيئا...</string>
+
+
+    //sharewith
+    <string name="title_sharewith">شارك مع</string>
+    <string name="share">شارك</string>
+    <string name="privacy">الإجمالية</string>
+
+
+    //event
+    <string name="category">الفئة</string>
+    <string name="at">في</string>
+    <string name="attendent">توقع</string>
+    <string name="place_name">جامعة جنوب آسيا</string>
+    <string name="by">بواسطة</string>
+    <string name="event_time">12:00 مساء</string>
+    <string name="date">2019/12/04</string>
+    <string name="accept">قبول</string>
+    <string name="accepted">وافقت</string>
+    <string name="reject">رفض</string>
+    <string name="declined">رفض</string>
+    <string name="joined">انضم</string>
+    <string name="nothing_to_show_add_event">لا شيء لإظهار! \ n أضف بعض الأحداث من خلال النقر أدناه</string>
+
+    //createevent
+    <string name="title_create_event">انشاء حدث</string>
+    <string name="write_place">مكان.....</string>
+    <string name="choose_category">اختر الفئة</string>
+
+    <string-array name="category_events">
+        <item>بعد الحفلة</item>
+        <item>حفل توزيع الجوائز</item>
+        <item>بسنت</item>
+        <item>إجتماع مجلس الإدارة</item>
+        <item>حفلة توديع العزوبية</item>
+        <item>عشاء العمل</item>
+        <item>حفلة شواء</item>
+        <item>حفلة عيد ميلاد</item>
+        <item>تشاند راات</item>
+        <item>حدث ثقافي</item>
+        <item>مؤتمر</item>
+        <item>مزاد خيري</item>
+        <item>حزب المصبوب</item>
+        <item>كرنفال الحزب</item>
+        <item>حفلة عيد الميلاد</item>
+        <item>حفلة تنكرية</item>
+        <item>حفل العشاء</item>
+        <item>العشاء والمسرح</item>
+        <item>ديوالي</item>
+        <item>حفلة راقصة</item>
+        <item>حفلة عيد الفصح</item>
+        <item>Eid-ul-fitr Event</item>
+        <item>Eid-ul-adha Event</item>
+        <item>حدث عائلي</item>
+        <item>مهرجان</item>
+        <item>لعبة ليلة الحزب</item>
+        <item>ليلة البون فاير</item>
+        <item>جمع</item>
+        <item>حفلة الهالوين</item>
+        <item>حفلة مبيت</item>
+        <item>هولى</item>
+        <item>هانوكا</item>
+        <item>عيد الاستقلال</item>
+        <item>حافز الحدث</item>
+        <item>يوم العمل</item>
+        <item>عشية منتصف الصيف</item>
+        <item>اجتماعات</item>
+        <item>حفلة رأس السنة</item>
+        <item>أحداث الشبكات</item>
+        <item>مكتب الحزب</item>
+        <item>حفل الافتتاح</item>
+        <item>ما قبل حزب</item>
+        <item>يوم باكستان</item>
+        <item>خطة الحزب</item>
+        <item>حزب سياسي</item>
+        <item>إطلاق المنتج</item>
+        <item>حزب البيتزا</item>
+        <item>حفل قرب المسبح</item>
+        <item>حدث شخصي</item>
+        <item>عيد الفصح</item>
+        <item>استقبال</item>
+        <item>حدث ديني</item>
+        <item>حفلة مبيت</item>
+        <item>الندوات</item>
+        <item>كرات المجتمع</item>
+        <item>اجتماعات المساهمين</item>
+        <item>المدارس</item>
+        <item>حفلة مفاجئة</item>
+        <item>حزب الرياضة</item>
+        <item>حفلة شاي</item>
+        <item>عيد الشكر</item>
+        <item>أحداث VIP</item>
+        <item>الاستقبال الخاص بالعرس</item>
+        <item>الذكرى الزفاف</item>
+        <item>Yom-e-Istiqlal</item>
+        <item>آخر</item>
+    </string-array>
+
+    <string name="selecttime">حدد الوقت</string>
+
+    <string name="string_date">تاريخ</string>
+    <string name="string_time">زمن</string>
+
+    <string name="invitation">رسالة دعوة</string>
+    <string name="create_event">انشاء حدث</string>
+
+    //viewevent
+    <string name="title_view_event">عرض الحدث</string>
+
+    //joined
+    <string name="time_stamp">21 يوليو في 3:56</string>
+    <string name="joined_total">انضم 12</string>
+
+
+    //explore
+    <string name="fallow">هاجع</string>
+    <string name="fallowing">إراحة</string>
+    <string name="search">بحث</string>
+
+    //account
+    <string name="requests">طلبات</string>
+    <string name="settings">الإعدادات</string>
+
+    //request
+    <string name="decline">انخفاض</string>
+
+    //mypost
+    <string name="my_post">مشاركاتي</string>
+
+    //myevent
+    <string name="my_event">أحداثي</string>
+
+    <string name="delete_account">حذف الحساب</string>
+    <string name="dialog_delete">هل انت متأكد انك تريد حذف حسابك؟</string>
+
+
+    //chat
+    <string name="chat">القطط</string>
+    <string name="title_select_chat">اختر الدردشة</string>
+    <string name="nothing_to_show_add_message">لا شيء لإظهار! \ n انقر أدناه لإرسال رسالة جديدة</string>
+
+
+    <string name="chat_message">أعتقد حتى قدم المساواة ماي سوتشو الجا ليست ...</string>
+
+    <string name="account">الحساب</string>
+    <string name="Avatar">الآلهة</string>
+    <string name="logout">الخروج</string>
+
+    //account edit
+    <string name="account_info">معلومات الحساب</string>
+    <string name="bio">وكان</string>
+    <string name="change_password">غير كلمة السر</string>
+    <string name="dialog_password">انقر فوق نعم لإعادة تعيين كلمة المرور الخاصة بك من خلال البريد والخروج</string>
+    <string name="dialog_logout">هل أنت متأكد أنك تريد تسجيل الخروج؟</string>
+
+    <string name="change_house_info">تغيير معلومات البيت</string>
+    <string name="change_hood_info">تغيير معلومات الغطاء</string>
+
+    <string name="write_a_message">اكتب رسالة...</string>
+
+    //avatar
+    <string name="use_one_avatar">استخدام واحد الرمزية</string>
+    <string name="use_three_avatar">استخدام أربعة الآلهة</string>
+    <string name="family_avatar">سوف ترى العائلة هذه الصورة الرمزية</string>
+    <string name="relative_avatar">سوف يرى الأقارب هذه الصورة الرمزية</string>
+    <string name="friend_avatar">سوف يرى فريندز هذه الصورة الرمزية</string>
+    <string name="public_avatar">سوف يرى الجمهور هذه الصورة الرمزية</string>
+    <string name="everyone_avatar">سيرى الجميع هذه الصورة الرمزية</string>
+
+    <string name="upload_avatar">تحميل الصورة الرمزية</string>
+
+
+    <string name="notification">الإخطار</string>
+</resources>

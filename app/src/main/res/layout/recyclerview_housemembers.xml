@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="@dimen/_60sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="0dp"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_member_avatar"
+        android:layout_width="@dimen/_51sdp"
+        android:layout_height="@dimen/_51sdp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_grey_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_ellipse"
+        android:layout_width="@dimen/_75sdp"
+        android:layout_height="@dimen/_75sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:background="@drawable/ic_black_ellipse1px"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_member_avatar"
+        app:layout_constraintEnd_toStartOf="@+id/iv_member_avatar"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toEndOf="@+id/iv_member_avatar"
+        app:layout_constraintTop_toTopOf="@+id/iv_member_avatar"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <TextView
+        android:id="@+id/tv_member_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/dosis"
+        android:gravity="center"
+        android:text="@string/member_name"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_member_avatar"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="@+id/iv_member_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/iv_member_avatar" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

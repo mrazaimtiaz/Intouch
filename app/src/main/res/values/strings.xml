@@ -1,0 +1,533 @@
+<resources>
+    <string name="app_name">Intouch</string>
+    <string name="app_title">InTouch</string>
+
+
+    //database
+    //collection
+    <string name="collection_users">user</string>
+    <string name="collection_hoods">hood</string>
+    <string name="collection_avatar">avatar</string>
+    <string name="collection_member">member</string>
+    <string name="collection_houses">house</string>
+    <string name="collection_requests">request</string>
+    <string name="collection_friends">friend</string>
+    <string name="collection_relatives">relative</string>
+    <string name="collection_compliment">compliment</string>
+    <string name="collection_post">post</string>
+    <string name="collection_comment">comment</string>
+    <string name="collection_notification">notification</string>
+    <string name="collection_events">event</string>
+    <string name="collection_chat">chat</string>
+    <string name="collection_message">message</string>
+
+    //field
+    <string name="u_id">u_id</string>
+    <string name="n_id">n_id</string>
+    <string name="h_id">h_id</string>
+    <string name="r_id">r_id</string>
+    <string name="f_id">f_id</string>
+    <string name="s_id">s_id</string>
+    <string name="like">like</string>
+    <string name="field_public_avatar">public_avatar</string>
+    <string name="field_rel_avatar">rel_avatar</string>
+    <string name="field_friend_avatar">friend_avatar</string>
+    <string name="field_family_avatar">family_avatar</string>
+    <string name="comp1">comp1</string>
+    <string name="comp2">comp2</string>
+    <string name="comp3">comp3</string>
+    <string name="comp4">comp4</string>
+    <string name="comp5">comp5</string>
+    <string name="comp6">comp6</string>
+    <string name="timestamp">timestamp</string>
+    <string name="field_status">status</string>
+    <string name="field_house_image">image</string>
+    <string name="field_house_name">name</string>
+    <string name="field_house_bio">bio</string>
+    <string name="field_share_with">shareWith</string>
+    <string name="field_members" translatable="false">members</string>
+
+    //request_field
+    <string name="request_send">request send</string>
+    <string name="request_accept">request accept</string>
+    <string name="request_declined">request decline</string>
+    <string name="request_accepted">request accepted</string>
+    <string name="device_token">device_token</string>
+
+    <string name="type_member">member</string>
+    <string name="type_relative">relative</string>
+    <string name="type_friend">friend</string>
+    <string name="type_knower">knower</string>
+    <string name="type_hood">hood</string>
+    <string name="type_other">public</string>
+    <string name="type_house">House</string>
+    <string name="type_people">people</string>
+
+
+    //document
+    <string name="document_profile_images">p_images</string>
+    <string name="document_member_request">member_request</string>
+
+
+    //classes
+    <string name="empty">empty</string>
+
+
+    //error
+    <string name="error_badly_formatted">The email address is badly formatted.</string>
+    <string name="error_user_not_exist">There is no user record corresponding to this identifier. The user may have been deleted.</string>
+    <string name="error_internet">A network error (such as timeout, interrupted connection or unreachable host) has occurred.</string>
+    <string name="error_password">The password is invalid or the user does not have a password.</string>
+    <string name="error_email_exist">The email address is already in use by another account.</string>
+
+    <string name="stop">.</string>
+
+
+    <string name="android_key">AIzaSyATnUkq-SW0aAJDbf1N8-8_Wqzfw1hBYVI</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+    //category
+    <string name="category_post">post</string>
+    <string name="category_event">event</string>
+    <string name="notify_type_like">like</string>
+    <string name="notify_type_comment">comment</string>
+    <string name="notify_type_accept">accept</string>
+    <string name="status_unread">unread</string>
+    <string name="status_read">read</string>
+
+    //notification
+    <string name="title_event">Event</string>
+    <string name="notification_body_like">like your post</string>
+    <string name="notification_body_accept">joined your event</string>
+    <string name="notification_body_relative_request">has accepted relative request</string>
+    <string name="notification_body_friend_request">has accepted your friend request</string>
+
+
+    <string name="notification_body_comment">has commented on your post</string>
+    <string name="title_post">Post</string>
+
+    //intent
+    <string name="activity_name">activityname</string>
+    <string name="selected_image">selected_image</string>
+    <string name="SignupActivity.class">SignupActivity.class</string>
+    <string name="NewHouseActivity.class">NewHouseActivity.class</string>
+    <string name="PostPhotoActivity.class">PostPhotoActivity.class</string>
+    <string name="SingleSharePostActivity.class">SingleSharePostActivity.class</string>
+    <string name="CreateEventActivity.class">CreateEventActivity.class</string>
+    <string name="SingleShareEventActivity.class">SingleShareEventActivity.class</string>
+    <string name="AvatarActivity.class">AvatarActivity.class</string>
+    <string name="ChangeHouseInfo.class">ChangeHouseInfo.class</string>
+    <string name="ChangeHoodInfo.class">ChangeHoodInfo.class</string>
+    <string name="user_inputs">user_inputs</string>
+    <string name="longitudeLeft">longitudeLeft</string>
+    <string name="longitudeRight">longitudeRight</string>
+    <string name="latitudeLeft">latitudeLeft</string>
+    <string name="latitudeRight">latitudeRight</string>
+    <string name="currentLatitude">Latitude</string>
+    <string name="currentLongititude">Longitude</string>
+    <string name="house_id">house_id</string>
+    <string name="intent_type">type_intent</string>
+    <string name="intent_member">intent_member</string>
+    <string name="intent_photo">intent_photo</string>
+    <string name="intent_memberid">intent_memberid</string>
+    <string name="intent_no_request">no request</string>
+    <string name="intent_chat">intent_chat</string>
+
+    <string name="individual_chat">individual chat</string>
+    <string name="group_chat">group_chat</string>
+
+
+    //shown to user
+
+    <string name="ago">&#032;ago</string>
+    <string name="seconds_ago">" seconds ago "</string>
+    <string name="minutes_ago">" minutes ago "</string>
+    <string name="hours_ago">" hours ago "</string>
+    <string name="days_ago">" days ago "</string>
+    <string name="yesterday">" yesterday "</string>
+    <string name="s_ago">" sec ago"</string>
+    <string name="m_ago">" mint ago"</string>
+    <string name="h_ago">" hour ago"</string>
+    <string name="d_ago">" day ago"</string>
+    //notifications
+    <string name="title_request">Intouch</string>
+    <string name="request_body"> has send you a request</string>
+
+
+    //toast
+    <string name="toast_zoom">Wait to load Houses.Drag and Zoom for more houses</string>
+    <string name="toast_restart">pls Restart the App something went wrong!!</string>
+    //error message
+    <string name="password_is_required">Password is required</string>
+    <string name="email_is_required">Email is required</string>
+    <string name="format_not_correct">please enter a valid email</string>
+    <string name="email_not_exist">Email not exist</string>
+    <string name="email_already_exist">Email already exist</string>
+    <string name="password_not_matched">password not matched</string>
+    <string name="check_connection">Please Check your Internet Connection and try again</string>
+    <string name="wait_for_request">Main Screen will Intent after request Accept</string>
+
+    //signup
+    <string name="username_is_required">Username is required</string>
+    <string name="avatar_is_required">Avatar is required</string>
+    <string name="hoodimage_is_required">Hood image is required</string>
+    <string name="housename_is_required">House Name is required</string>
+    <string name="hoodname_is_required">Hood Name is required</string>
+    <string name="houseimage_is_required">House image is required</string>
+    <string name="lastname_is_required">Last Name is required</string>
+    <string name="firstname_is_required">First Name is required</string>
+    <string name="special_character_not_allowed">Special characters are not allowed</string>
+    <string name="minimum_length_6">Minimum length is 6</string>
+    <string name="minimum_length_3">Minimum length is 3</string>
+    <string name="maximum_length_20">Maximum length 20</string>
+    <string name="maximum_length_12">Maximum length 12</string>
+    <string name="maximum_length_8">Maximum length 8</string>
+
+    <string name="some_thing_went_wrong">Something went wrong</string>
+    <string name="auth_error">Failed to get document because the client is offline.</string>
+
+    //permission_required
+    <string name="permission_required">Permission Required</string>
+
+    //marker home
+    <string name="new_house">Click to Create new House</string>
+
+
+    //introduction
+    <string name="btn_login">LOG IN</string>
+    <string name="btn_signup">SIGN UP</string>
+    <string name="text_map_oriented_interface">Map oriented \n interface</string>
+    <string name="keep_you">Keeps you </string>
+    <string name="in_touch">In-Touch </string>
+    <string name="with_your_knowers">with your Knowers</string>
+
+    <string name="family">Family</string>
+    <string name="relative">Relative</string>
+    <string name="friend">Friend</string>
+    <string name="knowers">Knowers</string>
+    <string name="hood">Hood</string>
+    <string name="public_">Public</string>
+
+    <string name="title_share">Share Event and Post</string>
+    <string name="title_folk">With different folks</string>
+
+    <string name="protect_privacy_title">Protect your privacy</string>
+    <string name="avatar_title"> place different avatar for your Knowers</string>
+
+
+    //login activity
+    <string name="background_image">Background Image</string>
+    <string name="intouch_logo">Intouch Logo</string>
+    <string name="welcome_back">Welcome Back!!!</string>
+
+    <string name="line">Line</string>
+    <string name="hint_mail" translatable="false">xyz@gmail.com</string>
+    <string name="hint_pass">*********</string>
+
+    <string name="forgot_password">forgot your password</string>
+    <string name="dont_have_account">Don\'t have an account\? Click here</string>
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+
+    //forgot password
+    <string name="title_forgotpassword">Forgot Password</string>
+    <string name="recieve_instruction">To receive instructions on email\nClick on Reset button</string>
+    <string name="have_an_account"> have an account\? Click here</string>
+    <string name="btn_reset">RESET</string>
+
+
+    //signup
+    <string name="title_signup">Sign Up</string>
+    <string name="welcome">Welcome !!!</string>
+    <string name="avatar">avatar</string>
+    <string name="name">Name</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="username">Username</string>
+    <string name="hint_name">Mohammad Raza</string>
+    <string name="hint_first_name">Mohammad</string>
+    <string name="hint_last_name">Raza</string>
+
+    <string name="hint_username">m.razaimtiaz</string>
+
+    <string name="btn_next">Next</string>
+    <string name="storage_permission">Storage permission required. Open Settings?</string>
+    <string name="toast_restart_gps">Restart the application to load the GPS settings</string>
+
+    //choose your house
+    <string name="title_choose_your_house">Choose Your House</string>
+    <string name="internet_connection">Please check your Internet connection\n and try again</string>
+    <string name="btn_tryagain">Try Again</string>
+    <string name="btn_opensettings">Open Settings</string>
+    <string name="permission_message">Location Permission Required \nto proceed!!!</string>
+    <string name="btn_gps">Enable GPS</string>
+    <string name="gps_message">This application Required GPS\nto proceed!!!</string>
+
+    //create new house
+    <string name="title_create_new_house">Create New House</string>
+    <string name="house_image">Choose House Image</string>
+    <string name="house_name">House Name</string>
+    <string name="hint_house_name">Sha House</string>
+
+    <string name="hood_image">Suggest Hood Image</string>
+    <string name="hood_name">Hood Name</string>
+    <string name="hint_hood_name">Mozang</string>
+    <string name="btn_create">CREATE</string>
+    <string name="optional">(optional)</string>
+
+
+    //houseinfo
+    <string name="title_house_info">House Info</string>
+    <string name="house_bio">United we stand, divided we fall</string>
+    <string name="house_member">House Members</string>
+
+    <string name="btn_member_request">SEND MEMBER REQUEST</string>
+    <string name="btn_cancel_request">CANCEL REQUEST</string>
+    <string name="member_name">Name</string>
+
+
+    //mainhouseinfo
+    <string name="post">Create Post</string>
+    <string name="event">Create Event</string>
+    <string name="broke">Broke</string>
+    <string name="message">Message</string>
+    <string name="btn_relative_request">Send Relative Request</string>
+    <string name="hood_info">Hood Info</string>
+    <string name="dialog_broke">Are you sure you want to broke with your relative House?</string>
+
+
+    //hoodinfo
+    <string name="title_hood_info">Hood Info</string>
+    <string name="hood_bio">United we stand, divided we fall</string>
+    <string name="hood_member">Hood Members</string>
+
+    //hood_section
+    <string name="edit">Edit</string>
+    <string name="update">Update</string>
+    <string name="compliments">Compliments</string>
+    <string name="fallowers">Fallowers</string>
+
+    //member_info
+    <string name="title_member_info">Member Info</string>
+    <string name="btn_friend_request">Send Friend Request</string>
+
+
+    //member_section
+    <string name="view_post">View Post</string>
+    <string name="view_event">View Event</string>
+    <string name="dialog_broke_friend">Are you sure you want to broke with your friend?</string>
+
+
+    //fallowers activity
+    <string name="title_fallower">Fallowers</string>
+    <string name="on_hood_name">ON MOZANG</string>
+    <string name="nothing_to_show">Nothing to Show!!</string>
+    <string name="on">on</string>
+
+
+    //compliments activity
+    <string name="title_compliments">Compliments</string>
+
+    <string name="beautiful_place">Beautiful Place to visit</string>
+    <string name="welcoming_and_loving">Welcoming &amp; loving people</string>
+    <string name="virtous_and_clean">Virtuous and clean area</string>
+    <string name="affordable_place">Affordable place</string>
+    <string name="superior_standard">Superior standard</string>
+    <string name="admirable_hospitality">Admirable Hospitality</string>
+    <string name="number">12</string>
+
+
+    //post
+    <string name="time">12 h</string>
+    <string name="comment">One of the finest batsman I have ever seen. Since I started to watch the cricket #WorldCup2019</string>
+    <string name="nothing_to_show_add_post">Nothing to Show!!! \n Add Some post by Clicking below</string>
+
+
+    //viewpost
+    <string name="title_view_post">View Post</string>
+    <string name="reply">Reply</string>
+
+    <string name="write_a_comment">Write a Comment...</string>
+
+
+    //postphoto
+    <string name="title_post_photo">Post Photo</string>
+    <string name="say_something">Say Something...</string>
+
+
+    //sharewith
+    <string name="title_sharewith">Share With</string>
+    <string name="share">Share</string>
+    <string name="privacy">Privacy</string>
+
+
+    //event
+    <string name="category">Category</string>
+    <string name="at">at</string>
+    <string name="attendent">attendent</string>
+    <string name="place_name">University of South Asia lhr</string>
+    <string name="by">by</string>
+    <string name="event_time">12:00 pm</string>
+    <string name="date">12-04-2019</string>
+    <string name="accept">Accept</string>
+    <string name="accepted">Accepted</string>
+    <string name="reject">Reject</string>
+    <string name="declined">Declined</string>
+    <string name="joined">Joined</string>
+    <string name="nothing_to_show_add_event">Nothing to Show!!! \n Add Some event by Clicking below</string>
+
+    //createevent
+    <string name="title_create_event">Create Event</string>
+    <string name="write_place">Place.....</string>
+    <string name="choose_category">Select Category</string>
+
+    <string-array name="category_events">
+        <item>After-party</item>
+        <item>Award Ceremony</item>
+        <item>Basant</item>
+        <item>Board Meeting</item>
+        <item>Bachelor party</item>
+        <item>Business dinner</item>
+        <item>BBQ Party</item>
+        <item>Birthday party</item>
+        <item>Chaand Raat</item>
+        <item>Cultural Event</item>
+        <item>Conference</item>
+        <item>Charitable auction</item>
+        <item>Cast party</item>
+        <item>Carnival Party</item>
+        <item>Christmas Party </item>
+        <item>Costume Party </item>
+        <item>Dinner party</item>
+        <item>Dinner and theater</item>
+        <item>Diwali</item>
+        <item>Dance Party</item>
+        <item>Easter Party</item>
+        <item>Eid-ul-fitr Event</item>
+        <item>Eid-ul-adha Event</item>
+        <item>Family Event</item>
+        <item>Festival</item>
+        <item>Game Night Party</item>
+        <item>Guy Fawkes Night</item>
+        <item>gathering</item>
+        <item>Halloween Party</item>
+        <item>Housewarming party</item>
+        <item>Holi</item>
+        <item>Hanukkah</item>
+        <item>Independence Day</item>
+        <item>Incentive Event</item>
+        <item>Labour Day</item>
+        <item>Midsummer Eve</item>
+        <item>Meetings</item>
+        <item>New Year Eve Party</item>
+        <item>Networking Events</item>
+        <item>Office Party</item>
+        <item>Opening Ceremony</item>
+        <item>Pre-party</item>
+        <item>Pakistan Day</item>
+        <item>Party plan</item>
+        <item>Political houseparty</item>
+        <item>Product launches</item>
+        <item>Pizza Party</item>
+        <item>Pool Party </item>
+        <item>Personal Event</item>
+        <item>Passover</item>
+        <item>Reception</item>
+        <item>Religious Event</item>
+        <item>Sleepover Party</item>
+        <item>Seminars</item>
+        <item>Society balls</item>
+        <item>Shareholder Meetings</item>
+        <item>Schools</item>
+        <item>Surprise party</item>
+        <item>Sports Party </item>
+        <item>Tea Party </item>
+        <item>Thanksgiving</item>
+        <item>VIP Events</item>
+        <item>Wedding reception</item>
+        <item>Wedding Anniversaries</item>
+        <item>Yom-e-Istiqlal</item>
+        <item>other</item>
+    </string-array>
+
+    <string name="selecttime">select time</string>
+
+    <string name="string_date">Date</string>
+    <string name="string_time">Time</string>
+
+    <string name="invitation">Invitation</string>
+    <string name="create_event">Create Event</string>
+
+    //viewevent
+    <string name="title_view_event">View Event</string>
+
+    //joined
+    <string name="time_stamp">21 july at 3:56</string>
+    <string name="joined_total">Joined 12</string>
+
+
+    //explore
+    <string name="fallow">Fallow</string>
+    <string name="fallowing">Fallowing</string>
+    <string name="search">Search</string>
+
+    //account
+    <string name="requests">Requests</string>
+    <string name="settings">Settings</string>
+
+    //request
+    <string name="decline">Decline</string>
+
+    //mypost
+    <string name="my_post">My Posts</string>
+
+    //myevent
+    <string name="my_event">My Events</string>
+
+    <string name="delete_account">Delete Account</string>
+    <string name="dialog_delete">Are you sure you want to delete your account?</string>
+
+
+    //chat
+    <string name="chat">Chats</string>
+    <string name="title_select_chat">Select Chat</string>
+    <string name="nothing_to_show_add_message">Nothing to Show!!! \n Click below to send a new Message</string>
+
+
+    <string name="chat_message">yar I don\'t think so par mai sochu ga is ba….</string>
+
+    <string name="account">ACCOUNT</string>
+    <string name="Avatar">Avatars</string>
+    <string name="logout">Log Out</string>
+
+    //account edit
+    <string name="account_info">ACCOUNT INFO</string>
+    <string name="bio">Bio</string>
+    <string name="change_password">Change Password</string>
+    <string name="dialog_password">Click yes to reset your password through mail and signout</string>
+    <string name="dialog_logout">Are you sure you want to LogOut?</string>
+
+    <string name="change_house_info">Change House Info</string>
+    <string name="change_hood_info">Change Hood Info</string>
+
+    //avatar
+    <string name="use_one_avatar">Use One Avatar</string>
+    <string name="use_three_avatar">Use Four Avatars</string>
+    <string name="family_avatar">Family will see this avatar</string>
+    <string name="relative_avatar">Relatives will see this avatar</string>
+    <string name="friend_avatar">Freinds will see this avatar</string>
+    <string name="public_avatar">Public will see this avatar</string>
+    <string name="everyone_avatar">Everyone will see this avatar</string>
+
+    <string name="upload_avatar">Upload Avatar</string>
+
+    <string name="write_a_message">Write message...</string>
+
+
+    <string name="notification">NOTIFICATION</string>
+
+</resources>

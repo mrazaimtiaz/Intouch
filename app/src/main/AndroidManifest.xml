@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.intouchapp.intouch">
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:name=".Utills.UserClient"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_intouchlogo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_intouchlogo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Main.Settings.ChangeHoodInfoActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".Main.Settings.ChangeHouseInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Events.SingleShareEventActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Posts.SingleSharePostActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Notification.NotificationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Settings.AvatarActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Settings.EditAccountActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Settings.SettingsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Chats.SelectChatActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Chats.IndividualChatActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Chats.ChatsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Account.MyEventsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Account.MyPostsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Account.Requests.RequestsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Account.Knowers.KnowersActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Account.AccountActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Explore.Searching.SearchedActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Explore.Searching.SearchingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Explore.ExploreActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Events.ViewEventActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Events.InvitationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Events.CreateEventActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Posts.ShareWithActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Posts.PostPhotoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Posts.ViewPostActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Home.ComplimentsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Home.FallowersActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Home.MemberInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Home.HoodInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Home.MainHouseInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Signup.HouseInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Signup.NewHouseActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Signup.ChooseHouseActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Signup.SignupActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Signup.GalleryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Register.Login.ForgotPasswordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Register.Login.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Register.Introduction.IntroductionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Register.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".Utills.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/android_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

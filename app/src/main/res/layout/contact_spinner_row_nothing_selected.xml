@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerItemStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ellipsize="marquee"
+    android:singleLine="true"
+    android:text="@string/choose_category"
+    android:textAlignment="center"
+    android:gravity="center"
+    android:textColor="#808080"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:textSize="18sp" />
