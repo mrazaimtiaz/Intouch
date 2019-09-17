@@ -15,6 +15,7 @@ public class User {
     private String username;
     private String name;
     private String bio;
+    private String p_no;
     private Timestamp timestamp;
 
     private String n_id;
@@ -25,17 +26,20 @@ public class User {
     private String friend_avatar;
     private String family_avatar;
 
+    private String code;
+
     private String device_token;
 
     public User() {
     }
 
-    public User(String u_id, String email, String username, String name, String bio, Timestamp timestamp, String n_id, String h_id, String public_avatar, String rel_avatar, String friend_avatar, String family_avatar, String device_token) {
+    public User(String u_id, String email, String username, String name, String bio, String p_no, Timestamp timestamp, String n_id, String h_id, String public_avatar, String rel_avatar, String friend_avatar, String family_avatar, String code, String device_token) {
         this.u_id = u_id;
         this.email = email;
         this.username = username;
         this.name = name;
         this.bio = bio;
+        this.p_no = p_no;
         this.timestamp = timestamp;
         this.n_id = n_id;
         this.h_id = h_id;
@@ -43,6 +47,7 @@ public class User {
         this.rel_avatar = rel_avatar;
         this.friend_avatar = friend_avatar;
         this.family_avatar = family_avatar;
+        this.code = code;
         this.device_token = device_token;
     }
 
@@ -84,6 +89,14 @@ public class User {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public String getP_no() {
+        return p_no;
+    }
+
+    public void setP_no(String p_no) {
+        this.p_no = p_no;
     }
 
     public Timestamp getTimestamp() {
@@ -140,6 +153,14 @@ public class User {
 
     public void setFamily_avatar(String family_avatar) {
         this.family_avatar = family_avatar;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getDevice_token() {

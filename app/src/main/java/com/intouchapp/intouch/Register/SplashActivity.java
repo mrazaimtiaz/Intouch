@@ -20,6 +20,7 @@ import com.intouchapp.intouch.Main.MainActivity;
 import com.intouchapp.intouch.Models.User;
 import com.intouchapp.intouch.R;
 import com.intouchapp.intouch.Register.Introduction.IntroductionActivity;
+import com.intouchapp.intouch.Signup.AddPhoneNumberActivity;
 import com.intouchapp.intouch.Signup.ChooseHouseActivity;
 
 public class SplashActivity extends AppCompatActivity {
@@ -73,7 +74,13 @@ public class SplashActivity extends AppCompatActivity {
                                 User user = task.getResult().toObject(User.class);
 
                                 if(user!= null){
-                                    if(user.getH_id().equals(getString(R.string.empty))){
+                                    if(user.getP_no().equals(getString(R.string.empty))){
+                                        Intent intent = new Intent(SplashActivity.this, AddPhoneNumberActivity.class);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                    else if(user.getH_id().equals(getString(R.string.empty))){
                                         Intent intent = new Intent(SplashActivity.this, ChooseHouseActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);

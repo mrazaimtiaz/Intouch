@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 
@@ -35,6 +36,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
@@ -64,6 +66,7 @@ import com.intouchapp.intouch.Main.MainActivity;
 import com.intouchapp.intouch.Models.House;
 import com.intouchapp.intouch.Models.User;
 import com.intouchapp.intouch.R;
+import com.intouchapp.intouch.Register.Login.LoginActivity;
 import com.intouchapp.intouch.Register.SplashActivity;
 import com.intouchapp.intouch.Utills.SharedPreManager;
 import com.intouchapp.intouch.Utills.MarkersClusterizer;
@@ -118,6 +121,8 @@ public class ChooseHouseActivity extends AppCompatActivity implements OnMapReady
      double latitudeRight;
     private LinkedHashMap<Point, ArrayList<MarkerOptions>> clusters;
 
+    FirebaseAuth auth;
+
     //firebase
     private FirebaseFirestore mDb;
 
@@ -132,6 +137,8 @@ public class ChooseHouseActivity extends AppCompatActivity implements OnMapReady
         Log.d(TAG, "onCreate: mapview " + mMapView);
 
         Log.d(TAG, "onCreate: locat" + mLocation);
+
+        auth = FirebaseAuth.getInstance();
 
         mMain = findViewById(R.id.constraintLayoutmain);
         mInternet = findViewById(R.id.constraintLayoutinternet);
@@ -778,6 +785,34 @@ public class ChooseHouseActivity extends AppCompatActivity implements OnMapReady
         }
 
         oldZoom = mMap.getCameraPosition().zoom;
+    }
+
+    public void logout(View view) {
+        new AlertDialog.Builder(mContext)
+                .setTitle(getString(R.string.logout))
+                .setMessage(mContext.getString(R.string.dialog_logout))
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        auth.signOut();
+                        Intent intent = new Intent(mContext, LoginActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .setIcon(android.R.drawable.ic_lock_lock)
+                .show();
     }
 
     @SuppressLint("StaticFieldLeak")

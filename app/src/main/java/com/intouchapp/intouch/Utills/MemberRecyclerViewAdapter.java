@@ -130,8 +130,8 @@ public class MemberRecyclerViewAdapter  extends RecyclerView.Adapter<MemberRecyc
                             UniversalImageLoader.setImage(user.getRel_avatar(), holder.mMemberAvatar, null, "",mContext);
                         }
                     }
-                    if(friendList != null){
-                        if(friendList.contains(id.get(position))){
+                    if(freindLists != null){
+                        if(freindLists.contains(id.get(position))){
                             publicCheck[0] = false;
                             holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_blue_ellipse));
                             UniversalImageLoader.setImage(user.getFriend_avatar(), holder.mMemberAvatar, null, "",mContext);
@@ -253,8 +253,8 @@ public class MemberRecyclerViewAdapter  extends RecyclerView.Adapter<MemberRecyc
                         mContext.startActivity(intent);
                     }
                 }
-                if(friendList != null){
-                    if(friendList.contains(id.get(position))){
+                if(freindLists != null){
+                    if(freindLists.contains(id.get(position))){
                         Log.d(TAG, "intentMethod: into type hood0 fri");
                         publicCheck = false;
                         Intent intent = new Intent(mContext, MemberInfoActivity.class);

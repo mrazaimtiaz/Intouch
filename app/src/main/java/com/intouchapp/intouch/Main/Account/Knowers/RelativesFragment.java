@@ -82,7 +82,6 @@ public class RelativesFragment extends Fragment {
                             List<DocumentSnapshot> list = Objects.requireNonNull(task.getResult()).getDocuments();
                             for (int i = 0; i < list.size(); i++) {
                                 Relative relative = list.get(i).toObject(Relative.class);
-                                assert relative != null;
                                 if (relative.getR_id() != null) {
                                     if (relative.getR_id().size() != 0)
                                         Log.d(TAG, "onComplete: get relative list");

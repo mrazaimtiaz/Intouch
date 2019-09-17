@@ -29,6 +29,7 @@ import com.intouchapp.intouch.Models.User;
 import com.intouchapp.intouch.R;
 import com.intouchapp.intouch.Register.Introduction.IntroductionActivity;
 import com.intouchapp.intouch.Register.SplashActivity;
+import com.intouchapp.intouch.Signup.AddPhoneNumberActivity;
 import com.intouchapp.intouch.Utills.SharedPreManager;
 import com.intouchapp.intouch.Signup.ChooseHouseActivity;
 import com.intouchapp.intouch.Signup.SignupActivity;
@@ -145,7 +146,51 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
 
-                            checkIfEmailVerified();
+
+
+                            mDb.collection(getString(R.string.collection_users)).document(FirebaseAuth.getInstance().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
+                                    if(task.isSuccessful()){
+                                        User user = task.getResult().toObject(User.class);
+
+                                        if(user != null){
+                                            if(user.getP_no().equals(getString(R.string.empty))){
+                                                Intent intent = new Intent(mcontext, AddPhoneNumberActivity.class);
+                                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                            else if(user.getH_id().equals(getString(R.string.empty))){
+                                                Intent intent = new Intent(LoginActivity.this, ChooseHouseActivity.class);
+                                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                            else{
+                                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                        }else{
+                                            Intent intent = new Intent(LoginActivity.this,IntroductionActivity.class);
+                                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+
+                                    }
+                                    if(task.isCanceled()){
+                                        Intent intent = new Intent(LoginActivity.this,IntroductionActivity.class);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+
+                                }
+                            });
 
 
                         } else {

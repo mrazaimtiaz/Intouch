@@ -22,6 +22,7 @@ import com.intouchapp.intouch.Models.Comment;
 import com.intouchapp.intouch.Models.Compliment;
 import com.intouchapp.intouch.Models.Event;
 import com.intouchapp.intouch.Models.Friend;
+import com.intouchapp.intouch.Models.Hood;
 import com.intouchapp.intouch.Models.House;
 import com.intouchapp.intouch.Models.Notification;
 import com.intouchapp.intouch.Models.Post;
@@ -180,7 +181,24 @@ public class SettingsActivity extends AppCompatActivity {
                                                                 assert house != null;
                                                                 if(house.getMembers() != null){
                                                                     if(house.getMembers().size() == 1){
-                                                                        mDb.collection(getString(R.string.collection_hoods)).document(user.getN_id()).collection(getString(R.string.collection_houses)).document(user.getH_id()).delete();
+                                                                        mDb.collection(getString(R.string.collection_hoods)).document(user.getN_id()).collection(getString(R.string.collection_houses)).document(user.getH_id()).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                            @Override
+                                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                                if(task.isSuccessful()){
+                                                                                    mDb.collection(getString(R.string.collection_hoods)).document(user.getN_id()).collection(getString(R.string.collection_houses)).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                                                        @Override
+                                                                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                                                                                            if(Objects.requireNonNull(task.getResult()).size() == 0){
+                                                                                                mDb.collection(getString(R.string.collection_hoods)).document(user.getN_id()).delete();
+                                                                                            }
+                                                                                        }
+                                                                                    });
+                                                                                }
+
+                                                                            }
+                                                                        });
+
 
 
                                                                         mDb.collection(getString(R.string.collection_requests)).whereEqualTo(getString(R.string.r_id),user.getH_id()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -201,6 +219,83 @@ public class SettingsActivity extends AppCompatActivity {
                                                                         });
 
 
+                                                                        try {
+                                                                            mDb.collection(getString(R.string.collection_users)).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                                                @Override
+                                                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                                                                                    if(task.isSuccessful()){
+                                                                                        final List<DocumentSnapshot> userList = Objects.requireNonNull(task.getResult()).getDocuments();
+
+                                                                                        for(int i = 0; i < userList.size(); i++){
+
+                                                                                            mDb.collection(getString(R.string.collection_users)).document(userList.get(i).getId()).collection(getString(R.string.collection_relatives)).whereEqualTo(getString(R.string.h_id),user.getH_id()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                                                                @Override
+                                                                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                                                                                                    if(task.isSuccessful()){
+
+                                                                                                        List<DocumentSnapshot> relativelist = Objects.requireNonNull(task.getResult()).getDocuments();
+
+                                                                                                        for(int i = 0; i < relativelist.size(); i++){
+
+                                                                                                            Relative relative = relativelist.get(i).toObject(Relative.class);
+
+                                                                                                            assert relative != null;
+                                                                                                                    mDb.collection(getString(R.string.collection_users)).document(userList.get(i).getId()).collection(getString(R.string.collection_relatives)).document(relativelist.get(i).getId()).delete();
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            });
+
+                                                                                            mDb.collection(getString(R.string.collection_users)).document(userList.get(i).getId()).collection(getString(R.string.collection_friends)).whereEqualTo(getString(R.string.h_id),user.getH_id()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                                                                @Override
+                                                                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                                                                                                    if(task.isSuccessful()){
+
+                                                                                                        List<DocumentSnapshot> friendList = Objects.requireNonNull(task.getResult()).getDocuments();
+
+                                                                                                        for(int i = 0; i < friendList.size(); i++){
+
+                                                                                                            Friend friend = friendList.get(i).toObject(Friend.class);
+
+                                                                                                            assert friend != null;
+                                                                                                                    mDb.collection(getString(R.string.collection_users)).document(userList.get(i).getId()).collection(getString(R.string.collection_friends)).document(friendList.get(i).getId()).delete();
+
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            });
+
+                                                                                            if(userList.size() -1 == i){
+                                                                                                mDb.collection(getString(R.string.collection_users)).document(user.getU_id()).collection(getString(R.string.collection_relatives)).document().delete();
+                                                                                                mDb.collection(getString(R.string.collection_users)).document(user.getU_id()).collection(getString(R.string.collection_friends)).document().delete();
+
+                                                                                            }
+
+
+                                                                                        }
+
+                                                                                    }
+                                                                                }
+                                                                            });
+
+                                                                        }catch (NullPointerException e){
+                                                                            e.printStackTrace();
+                                                                        }
+
+
+
+
+
+
+
+
+
+
+
+
 
                                                                     }else{
                                                                         house.getMembers().remove(user.getU_id());
@@ -214,6 +309,27 @@ public class SettingsActivity extends AppCompatActivity {
                                                     e.printStackTrace();
                                                 }
 
+                                                mDb.collection(getString(R.string.collection_hoods)).whereArrayContains(getString(R.string.field_fallower),user.getU_id()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                                                        if(task.isSuccessful()){
+                                                            List<DocumentSnapshot> hood_list = Objects.requireNonNull(task.getResult()).getDocuments();
+
+                                                            for(int i = 0; i < hood_list.size();i++){
+
+                                                                Hood hood = hood_list.get(i).toObject(Hood.class);
+
+                                                                if(hood != null){
+                                                                    if(hood.getFallower() != null){
+                                                                        hood.getFallower().remove(user.getU_id());
+                                                                        mDb.collection(getString(R.string.collection_hoods)).document(hood.getId()).set(hood);
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                });
 
 
                                                 try {
@@ -416,6 +532,12 @@ public class SettingsActivity extends AppCompatActivity {
                                                                             }
                                                                         }
                                                                     });
+
+                                                                    if(userList.size() -1 == i){
+                                                                        mDb.collection(getString(R.string.collection_users)).document(user.getU_id()).collection(getString(R.string.collection_relatives)).document().delete();
+                                                                        mDb.collection(getString(R.string.collection_users)).document(user.getU_id()).collection(getString(R.string.collection_friends)).document().delete();
+
+                                                                    }
 
 
                                                                 }

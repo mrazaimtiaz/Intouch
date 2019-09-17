@@ -89,6 +89,8 @@ public class SelectChatFamilyFragment extends Fragment {
                                     if(house.getMembers().size() == 1){
                                         settingRecyclerView(memberList);
                                     }
+                                }else{
+                                    settingRecyclerView(memberList);
                                 }
                             }
                         }

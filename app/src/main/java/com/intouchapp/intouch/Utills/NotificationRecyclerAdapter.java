@@ -93,7 +93,7 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<Notificati
 
                     Log.d(TAG, "onComplete: " + memberList);
                     if(memberList != null){
-                        if(memberList.contains(FirebaseAuth.getInstance().getUid())){
+                        if(memberList.contains(user.getU_id())){
                             Log.d(TAG, "onComplete: into the member");
                             publicType = false;
                             assert user != null;
@@ -119,7 +119,7 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<Notificati
                         }
                     }
                     if(friendList != null){
-                        if(friendList.contains(FirebaseAuth.getInstance().getUid())){
+                        if(friendList.contains(user.getU_id())){
                             publicType = false;
                             assert user != null;
                             UniversalImageLoader.setImage(user.getFriend_avatar(), holder.mMemberAvatar, null, "",mContext);
@@ -144,8 +144,8 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<Notificati
                         }
                     }
                     if(relativeList != null){
-                        assert memberList != null;
-                        if(relativeList.contains(FirebaseAuth.getInstance().getUid())){
+                        assert relativeList != null;
+                        if(relativeList.contains(user.getU_id())){
                             publicType = false;
                             assert user != null;
                             UniversalImageLoader.setImage(user.getRel_avatar(), holder.mMemberAvatar, null, "",mContext);

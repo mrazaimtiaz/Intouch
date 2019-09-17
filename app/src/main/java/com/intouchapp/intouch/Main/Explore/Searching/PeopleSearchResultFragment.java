@@ -147,26 +147,29 @@ public class PeopleSearchResultFragment extends Fragment {
                                                                                 }
                                                                             }
                                                                             if (i == list.size() - 1) {
-                                                                                mDb.collection(getString(R.string.collection_users)).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                                                                    @Override
-                                                                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                                                                        List<DocumentSnapshot> list = Objects.requireNonNull(task.getResult()).getDocuments();
+                                                                                if(isAdded()){
+                                                                                    mDb.collection(getString(R.string.collection_users)).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                                                        @Override
+                                                                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                                                            List<DocumentSnapshot> list = Objects.requireNonNull(task.getResult()).getDocuments();
 
-                                                                                        for(int i = 0; i < list.size() ; i++){
-                                                                                            User user1 = list.get(i).toObject(User.class);
+                                                                                            for(int i = 0; i < list.size() ; i++){
+                                                                                                User user1 = list.get(i).toObject(User.class);
 
-                                                                                            assert user1 != null;
-                                                                                            int ratio = FuzzySearch.ratio(user1.getName(),getData);
-                                                                                            if(ratio > 35){
-                                                                                                users.add(user1);
-                                                                                            }
+                                                                                                assert user1 != null;
+                                                                                                int ratio = FuzzySearch.ratio(user1.getName(),getData);
+                                                                                                if(ratio > 35){
+                                                                                                    users.add(user1);
+                                                                                                }
 
-                                                                                            if(i == list.size() - 1){
-                                                                                                settingRecyclerView(users);
+                                                                                                if(i == list.size() - 1){
+                                                                                                    settingRecyclerView(users);
+                                                                                                }
                                                                                             }
                                                                                         }
-                                                                                    }
-                                                                                });
+                                                                                    });
+                                                                                }
+
 
                                                                             }
                                                                         }

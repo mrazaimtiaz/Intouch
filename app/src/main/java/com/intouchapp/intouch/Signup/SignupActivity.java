@@ -35,10 +35,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseException;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
@@ -50,6 +53,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.hbb20.CountryCodePicker;
 import com.intouchapp.intouch.Models.User;
 import com.intouchapp.intouch.Utills.MyFirebaseMessagingService;
 import com.intouchapp.intouch.R;
@@ -70,13 +74,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SignupActivity extends AppCompatActivity {
 
     //widget
-    EditText mAvatar,mFirstName,mLastName,mUsername,mEmail,mPassword;
+    EditText mAvatar,mFirstName,mLastName,mUsername,mEmail,mPassword,mPhonenumber;
+
+    CountryCodePicker mCode;
 
     TextView mHaveAnAccount;
 
@@ -90,7 +97,7 @@ public class SignupActivity extends AppCompatActivity {
 
     //variables
     Context mContext;
-    String name, firstname, lastname, email, password, username,avatar;
+    String name, firstname, lastname, email, password, username,avatar,phonenumber;
     private String mAppend = "file://";
     private String user_id;
     ArrayList<String> userInputs = new ArrayList<String>();
@@ -99,6 +106,8 @@ public class SignupActivity extends AppCompatActivity {
 
     BroadcastReceiver broadcastReceiver;
     private Intent intent;
+
+    String code;
 
 
 
@@ -112,7 +121,11 @@ public class SignupActivity extends AppCompatActivity {
     private FirebaseFirestore mDb;
     private StorageReference mStorageRef;
 
+
+
     private static final String TAG = "SignupActivity";
+
+
 
 
     @Override
@@ -128,6 +141,11 @@ public class SignupActivity extends AppCompatActivity {
         mUsername = (EditText) findViewById(R.id.et_username);
         mEmail = (EditText) findViewById(R.id.et_email);
         mPassword = (EditText) findViewById(R.id.et_password);
+        mPhonenumber = (EditText) findViewById(R.id.et_phonenumber);
+        mCode = (CountryCodePicker) findViewById(R.id.countrycode);
+
+        mCode.setAutoDetectedCountry(true);
+
 
         mHaveAnAccount = (TextView) findViewById(R.id.tv_haveanaccount);
 
@@ -153,6 +171,9 @@ public class SignupActivity extends AppCompatActivity {
         profileImage();
         setImage();
         registerSignup();
+
+
+
 
     }
 
@@ -205,15 +226,30 @@ public class SignupActivity extends AppCompatActivity {
         email = mEmail.getText().toString();
         password = mPassword.getText().toString();
         username = mUsername.getText().toString();
+        phonenumber = mPhonenumber.getText().toString();
 
 
         if ((!firstname.matches("[a-zA-Z. ]*")) || checkStringEmpty(firstname) || (firstname.length() < 3) || (firstname.length() > 8) ||
                 (!lastname.matches("[a-zA-Z. ]*")) || checkStringEmpty(lastname) || (lastname.length() < 3) || (lastname.length() > 8) ||
                 checkStringEmpty(username) || !username.matches("[a-zA-Z0-9. ]*") || (username.length() < 3) || (username.length() > 12) ||
                 checkStringEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher((email)).matches() ||
-                checkStringEmpty(password) || characterlength(password) || (password.length() > 30) || (avatar.equals(getString(R.string.empty))))
+                checkStringEmpty(password) || characterlength(password) || (password.length() > 30) || (avatar.equals(getString(R.string.empty))) ||
+        checkStringEmpty(phonenumber) || characterlength(phonenumber) || (phonenumber.length() > 30))
         {
+            if (characterlength(phonenumber)) {
+                mPhonenumber.setError(getString(R.string.minimum_length_6));
+                mPhonenumber.requestFocus();
 
+            }
+            if (phonenumber.length() > 20) {
+                mPhonenumber.setError(getString(R.string.maximum_length_20));
+                mPhonenumber.requestFocus();
+            }
+            if (checkStringEmpty(phonenumber)) {
+                mPhonenumber.setError("Phonenumber is required");
+                mPhonenumber.requestFocus();
+
+            }
             if (!password.matches("[a-zA-Z0-9. ]*")) {
                 mPassword.setError(getString(R.string.special_character_not_allowed));
                 mPassword.requestFocus();
@@ -348,6 +384,7 @@ public class SignupActivity extends AppCompatActivity {
                     userInputs.add(mUsername.getText().toString());
                     userInputs.add(mPassword.getText().toString());
                     userInputs.add(mEmail.getText().toString());
+                    userInputs.add(mPhonenumber.getText().toString());
 
                     Intent i = new Intent(SignupActivity.this, GalleryActivity.class);
                     i.putExtra(getString(R.string.activity_name),activityName);
@@ -374,6 +411,7 @@ public class SignupActivity extends AppCompatActivity {
             mUsername.setText(fetchList.get(2));
             mPassword.setText(fetchList.get(3));
             mEmail.setText(fetchList.get(4));
+            mPhonenumber.setText(fetchList.get(5));
         }
 
         if (intent.hasExtra(getString(R.string.selected_image))) {
@@ -423,6 +461,7 @@ public class SignupActivity extends AppCompatActivity {
             userInputs.add(mUsername.getText().toString());
             userInputs.add(mPassword.getText().toString());
             userInputs.add(mEmail.getText().toString());
+            userInputs.add(mPhonenumber.getText().toString());
 
             Intent i = new Intent(SignupActivity.this, GalleryActivity.class);
             i.putExtra(getString(R.string.activity_name),activityName);
@@ -536,6 +575,45 @@ public class SignupActivity extends AppCompatActivity {
                 }
                 if (task.getResult().size() == 0) {
                     Log.d(TAG, "onComplete: not matched");
+                    checkPhoneNumber(phonenumber);
+                }
+            }
+        });
+
+    }
+    //********************************************* check phno *************************************************
+    public void checkPhoneNumber(String string) {
+
+        Log.d(TAG, "checkUserName: started");
+
+        CollectionReference mCollRef = mDb.collection(getString(R.string.collection_users));
+
+        final Query notesQuery = mCollRef.whereEqualTo(getString(R.string.p_no), string);
+
+        notesQuery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                Log.d(TAG, "onComplete: function started");
+                if (task.isSuccessful()) {
+                    for (DocumentSnapshot documentSnapshot : task.getResult()) {
+                        Log.d(TAG, "onComplete:  data get");
+                        String user = documentSnapshot.getString(getString(R.string.p_no));
+
+                        if(user != null){
+                            if (user.equals(phonenumber)) {
+                                Log.d(TAG, "onComplete: matched" + user);
+                                mPhonenumber.setError("Number is already in use");
+                                mPhonenumber.requestFocus();
+                                mProgressBar.setVisibility(View.GONE);
+                                mMain.setVisibility(View.VISIBLE);
+                            }
+                        }
+
+                    }
+
+                }
+                if (task.getResult().size() == 0) {
+                    Log.d(TAG, "onComplete: not matched");
                     registerUser(email, password);
                 }
             }
@@ -560,7 +638,8 @@ public class SignupActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         Log.d(TAG, "Display name: " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
 
-                                        sendVerificationEmail();
+                                        saavedata();
+
 
                                     }
                                 }
@@ -591,96 +670,112 @@ public class SignupActivity extends AppCompatActivity {
                     }
                 });
     }
+    private void sendPhoneVerification(){
+
+        PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+            @Override
+            public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+                //Getting the code sent by SMS
+                code = phoneAuthCredential.getSmsCode();
+
+                //sometime the code is not detected automatically
+                //in this case the code will be null
+                //so user has to manually enter the code
+                if (code != null) {
+                /*    otp.setText(code);
+                    //verifying the code
+                    verifyVerificationCode(code);*/
+                }
+            }
+
+            @Override
+            public void onVerificationFailed(FirebaseException e) {
+                Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        } ;
+
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                mPhonenumber.getText().toString(),        // Phone number to verify
+                60,                 // Timeout duration
+                TimeUnit.SECONDS,   // Unit of timeout
+                this,               // Activity (for callback binding)
+                mCallbacks);        // OnVerificationStateChangedCallbacks
+
+    }
 
     //************************************************* sendVerificationEmail ****************************************************
-    private void sendVerificationEmail()
+    private void saavedata()
     {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         user_id = FirebaseAuth.getInstance().getUid();
-
-        assert user != null;
-        user.sendEmailVerification()
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-
-                            ZoneId tz =  ZoneId.systemDefault();
-                            LocalDateTime localDateTime = LocalDateTime.now();
-                            long seconds = localDateTime.atZone(tz).toEpochSecond();
-                            int nanos = localDateTime.getNano();
-                            Timestamp timestamp = new Timestamp(seconds, nanos);
+        ZoneId tz =  ZoneId.systemDefault();
+        LocalDateTime localDateTime = LocalDateTime.now();
+        long seconds = localDateTime.atZone(tz).toEpochSecond();
+        int nanos = localDateTime.getNano();
+        Timestamp timestamp = new Timestamp(seconds, nanos);
 
 
 
-                            broadcastReceiver = new BroadcastReceiver() {
-                                @Override
-                                public void onReceive(Context context, Intent intent) {
-                                    device_token =  SharedPreManager.getInstance(SignupActivity.this).getToken();
-                                    Log.d(TAG, "onCreate: shared prefernce token " +  SharedPreManager.getInstance(SignupActivity.this).getToken());
-                                }
-                            };
-                            if(SharedPreManager.getInstance(SignupActivity.this).getToken() != null){
-                                device_token = SharedPreManager.getInstance(SignupActivity.this).getToken();
-                                Log.d(TAG, "onCreate: shared prefernce token main " +  SharedPreManager.getInstance(SignupActivity.this).getToken());
-                            }
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                device_token =  SharedPreManager.getInstance(SignupActivity.this).getToken();
+                Log.d(TAG, "onCreate: shared prefernce token " +  SharedPreManager.getInstance(SignupActivity.this).getToken());
+            }
+        };
+        if(SharedPreManager.getInstance(SignupActivity.this).getToken() != null){
+            device_token = SharedPreManager.getInstance(SignupActivity.this).getToken();
+            Log.d(TAG, "onCreate: shared prefernce token main " +  SharedPreManager.getInstance(SignupActivity.this).getToken());
+        }
 
 //                            registerReceiver(broadcastReceiver,new IntentFilter(MyFirebaseMessagingService.TOKEN_BROADCAST));
 
 
-                            UploadImageFileToFirebaseStorage(avatar);
-                            //insert user data
-                            final User user = new User();
-                            user.setEmail(email);
-                            user.setU_id(FirebaseAuth.getInstance().getUid());
-                            user.setBio(getString(R.string.empty));
-                            user.setName(name);
-                            user.setUsername(username);
-                            user.setH_id(getString(R.string.empty));
-                            user.setN_id(getString(R.string.empty));
-                            user.setTimestamp(timestamp);
-                            user.setDevice_token(device_token);
+        UploadImageFileToFirebaseStorage(avatar);
+        //insert user data
+        final User user = new User();
+        user.setEmail(email);
+        user.setU_id(FirebaseAuth.getInstance().getUid());
+        user.setBio(getString(R.string.empty));
+        user.setName(name);
+        user.setCode(getString(R.string.empty));
+        user.setUsername(username);
+        user.setH_id(getString(R.string.empty));
+        user.setN_id(getString(R.string.empty));
+        user.setTimestamp(timestamp);
+        user.setP_no(getString(R.string.empty));
+        user.setDevice_token(device_token);
 
 
-                            FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
-                                    .setTimestampsInSnapshotsEnabled(true)
-                                    .build();
-                            mDb.setFirestoreSettings(settings);
+        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+                .setTimestampsInSnapshotsEnabled(true)
+                .build();
+        mDb.setFirestoreSettings(settings);
 
-                            DocumentReference newUserRef = mDb
-                                    .collection(getString(R.string.collection_users))
-                                    .document(user_id);
+        DocumentReference newUserRef = mDb
+                .collection(getString(R.string.collection_users))
+                .document(user_id);
 
-                            newUserRef.set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        ((UserClient) (getApplicationContext())).setUser(user);
-                                        Log.d(TAG, "onComplete: data saved");
-                                    } else {
-                                        Toast.makeText(mContext, "Verification Email send to " + mEmail.getText().toString(), Toast.LENGTH_SHORT).show();
-                                        FirebaseAuth.getInstance().signOut();
-                                        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                                        startActivity(intent);
-                                        Log.d(TAG, "onComplete: something went wrong");
-                                    }
-                                }
-                            });
-                        }
-                        else
-                        {
-                            Toast.makeText(mContext, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
-                            // email not sent, so display message and restart the activity or do whatever you wish to do
-
-                            //restart this activity
-                            overridePendingTransition(0, 0);
-                            finish();
-                            overridePendingTransition(0, 0);
-                            startActivity(getIntent());
-
-                        }
-                    }
-                });
+        newUserRef.set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    ((UserClient) (getApplicationContext())).setUser(user);
+                    Log.d(TAG, "onComplete: data saved");
+                    Toast.makeText(mContext, getString(R.string.Verification_code_send_to )+ "+" + mCode.getSelectedCountryCode() +mPhonenumber.getText().toString(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignupActivity.this, verifyPhoneActivity.class);
+                    intent.putExtra("phoneNumber","+" + mCode.getSelectedCountryCode() +mPhonenumber.getText().toString());
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(mContext, "Verification code send to " + mPhonenumber.getText().toString(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignupActivity.this, verifyPhoneActivity.class);
+                    intent.putExtra("phoneNumber",mPhonenumber.getText().toString());
+                    startActivity(intent);
+                    finish();
+                    Log.d(TAG, "onComplete: something went wrong");
+                }
+            }
+        });
     }
     public void UploadImageFileToFirebaseStorage(String avatar) {
 
@@ -725,7 +820,7 @@ public class SignupActivity extends AppCompatActivity {
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()) {
                                                         Log.d(TAG, "onComplete: Image saved");
-                                                        finalIntent();
+
                                                     } else {
                                                         finalIntent();
                                                     }
@@ -750,7 +845,7 @@ public class SignupActivity extends AppCompatActivity {
 
             } catch (IOException e) {
                 e.printStackTrace();
-                finalIntent();
+
             }
 
         }
@@ -758,10 +853,12 @@ public class SignupActivity extends AppCompatActivity {
 
     //****************************************** finalintent *********************************
     private void finalIntent(){
-        Toast.makeText(mContext, "Verification Email send to " + mEmail.getText().toString(), Toast.LENGTH_SHORT).show();
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+        Toast.makeText(mContext, getString(R.string.Verification_code_send_to )+ "+" +mCode.getSelectedCountryCode() + mPhonenumber.getText().toString(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(SignupActivity.this, verifyPhoneActivity.class);
+        intent.putExtra("phoneNumber","+" + mCode.getSelectedCountryCode() + mPhonenumber.getText().toString());
         startActivity(intent);
+        finish();
+        Log.d(TAG, "onComplete: something went wrong");
     }
 
 }

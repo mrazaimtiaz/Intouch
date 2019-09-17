@@ -80,14 +80,17 @@ public class FriendsFragment extends Fragment {
                             List<DocumentSnapshot> list = Objects.requireNonNull(task.getResult()).getDocuments();
                             for (int i = 0; i < list.size(); i++) {
                                 Friend friend = list.get(i).toObject(Friend.class);
-                                assert friend != null;
-                                if (friend.getF_id() != null) {
-                                    if (friend.getF_id().size() != 0) {
-                                        Log.d(TAG, "onComplete: get friend list");
-                                        freindList.addAll(friend.getF_id());
-                                        Log.d(TAG, "onComplete:freindList " + freindList);
+                                if(friend != null){
+                                    if (friend.getF_id() != null) {
+                                        if (friend.getF_id().size() != 0) {
+
+                                            Log.d(TAG, "onComplete: get friend list");
+                                            freindList.addAll(friend.getF_id());
+                                            Log.d(TAG, "onComplete:freindList " + freindList);
+                                        }
                                     }
                                 }
+
                                 if (i == list.size() - 1) {
                                     settingRecyclerView(freindList);
                                 }

@@ -273,17 +273,25 @@ public class ViewPostActivity extends AppCompatActivity {
 
                 if(!mWriteComment.getText().toString().isEmpty()){
                     hideKeyboard(ViewPostActivity.this);
-                    ZoneId tz =  ZoneId.systemDefault();
-                    LocalDateTime localDateTime = LocalDateTime.now();
-                    long seconds = localDateTime.atZone(tz).toEpochSecond();
-                    int nanos = localDateTime.getNano();
-                    Timestamp timestamp = new Timestamp(seconds, nanos);
-
                     final Comment newcomment = new Comment();
                     newcomment.setComment(mWriteComment.getText().toString());
                     newcomment.setP_id(posts.getP_id());
-                    newcomment.setTimestamp(timestamp);
+
                     newcomment.setU_id(FirebaseAuth.getInstance().getUid());
+                    try {
+                        ZoneId tz =  ZoneId.systemDefault();
+                        LocalDateTime localDateTime = LocalDateTime.now();
+                        long seconds = localDateTime.atZone(tz).toEpochSecond();
+                        int nanos = localDateTime.getNano();
+                        Timestamp timestamp = new Timestamp(seconds, nanos);
+                        newcomment.setTimestamp(timestamp);
+                    }catch (ExceptionInInitializerError e){
+                        newcomment.setTimestamp(new Timestamp(0,0));
+                    }
+
+
+
+
 
                     try {
                         mDb.collection(getString(R.string.collection_post)).document(posts.getP_id()).collection(getString(R.string.collection_comment)).add(newcomment).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
@@ -298,8 +306,13 @@ public class ViewPostActivity extends AppCompatActivity {
                                         comment.add(newcomment);
                                         int newMsgPosition = comment.size() - 1;
 
-                                        commentsRecyclerAdapter.notifyItemInserted(newMsgPosition);
-                                        mRecyclerView.scrollToPosition(newMsgPosition);
+                                        if(commentsRecyclerAdapter != null){
+                                            commentsRecyclerAdapter.notifyItemInserted(newMsgPosition);
+                                            mRecyclerView.scrollToPosition(newMsgPosition);
+                                        }else{
+                                            settingRecylerView(comment);
+                                        }
+
 
 
                                         final Notification notification = new Notification();

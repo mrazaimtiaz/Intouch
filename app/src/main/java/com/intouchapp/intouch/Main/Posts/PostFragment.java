@@ -89,6 +89,8 @@ public class PostFragment extends Fragment {
         memberList = new ArrayList<>();
         relativeList = new ArrayList<>();
 
+        mFloat.bringToFront();
+
         mMain.setVisibility(View.GONE);
         mProgress.setVisibility(View.VISIBLE);
         gettingUserList();
@@ -703,9 +705,33 @@ public class PostFragment extends Fragment {
                                                         if(task.isSuccessful()){
                                                             User postUser = Objects.requireNonNull(task.getResult()).toObject(User.class);
                                                             assert postUser != null;
-                                                            if(postUser.getN_id() != null){
-                                                                if(user.getN_id().equals(postUser.getN_id())){
-                                                                    members.add(post);
+                                                            if(postUser != null){
+                                                                if(postUser.getN_id() != null){
+                                                                    if(user.getN_id().equals(postUser.getN_id())){
+                                                                        members.add(post);
+                                                                    }else {
+                                                                        if(memberList != null){
+                                                                            if(memberList.size() != 0){
+                                                                                if(memberList.contains(post.getU_id())){
+                                                                                    members.add(post);
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        if(freindList != null){
+                                                                            if(freindList.size() != 0){
+                                                                                if(freindList.contains(post.getU_id())){
+                                                                                    members.add(post);
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        if(relativeList != null){
+                                                                            if(relativeList.size() != 0){
+                                                                                if(relativeList.contains(post.getU_id())){
+                                                                                    members.add(post);
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
                                                                 }else {
                                                                     if(memberList != null){
                                                                         if(memberList.size() != 0){
@@ -729,29 +755,8 @@ public class PostFragment extends Fragment {
                                                                         }
                                                                     }
                                                                 }
-                                                            }else {
-                                                                if(memberList != null){
-                                                                    if(memberList.size() != 0){
-                                                                        if(memberList.contains(post.getU_id())){
-                                                                            members.add(post);
-                                                                        }
-                                                                    }
-                                                                }
-                                                                if(freindList != null){
-                                                                    if(freindList.size() != 0){
-                                                                        if(freindList.contains(post.getU_id())){
-                                                                            members.add(post);
-                                                                        }
-                                                                    }
-                                                                }
-                                                                if(relativeList != null){
-                                                                    if(relativeList.size() != 0){
-                                                                        if(relativeList.contains(post.getU_id())){
-                                                                            members.add(post);
-                                                                        }
-                                                                    }
-                                                                }
                                                             }
+
                                                         }
                                                     }
                                                 });
@@ -920,33 +925,36 @@ public class PostFragment extends Fragment {
                                                             if (task.isSuccessful()) {
                                                                 User postUser = Objects.requireNonNull(task.getResult()).toObject(User.class);
                                                                 assert postUser != null;
-                                                                if (postUser.getN_id() != null) {
-                                                                    if (user.getN_id().equals(postUser.getN_id())) {
-                                                                        members.add(post);
-                                                                    } else {
-                                                                        if (memberList != null) {
-                                                                            if (memberList.size() != 0) {
-                                                                                if (memberList.contains(post.getU_id())) {
-                                                                                    members.add(post);
+                                                                if(postUser != null){
+                                                                    if (postUser.getN_id() != null) {
+                                                                        if (user.getN_id().equals(postUser.getN_id())) {
+                                                                            members.add(post);
+                                                                        } else {
+                                                                            if (memberList != null) {
+                                                                                if (memberList.size() != 0) {
+                                                                                    if (memberList.contains(post.getU_id())) {
+                                                                                        members.add(post);
+                                                                                    }
                                                                                 }
                                                                             }
-                                                                        }
-                                                                        if (freindList != null) {
-                                                                            if (freindList.size() != 0) {
-                                                                                if (freindList.contains(post.getU_id())) {
-                                                                                    members.add(post);
+                                                                            if (freindList != null) {
+                                                                                if (freindList.size() != 0) {
+                                                                                    if (freindList.contains(post.getU_id())) {
+                                                                                        members.add(post);
+                                                                                    }
                                                                                 }
                                                                             }
-                                                                        }
-                                                                        if (relativeList != null) {
-                                                                            if (relativeList.size() != 0) {
-                                                                                if (relativeList.contains(post.getU_id())) {
-                                                                                    members.add(post);
+                                                                            if (relativeList != null) {
+                                                                                if (relativeList.size() != 0) {
+                                                                                    if (relativeList.contains(post.getU_id())) {
+                                                                                        members.add(post);
+                                                                                    }
                                                                                 }
                                                                             }
                                                                         }
                                                                     }
                                                                 }
+
                                                             }
                                                         }
                                                     });
@@ -978,19 +986,61 @@ public class PostFragment extends Fragment {
 
                                             }if(post.getType().equals(getString(R.string.type_other))){
                                                 if(user.getN_id() != null){
-                                                    mDb.collection(getString(R.string.collection_hoods)).document(user.getN_id()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                    mDb.collection(getString(R.string.collection_users)).document(post.getU_id()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                                         @Override
                                                         public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                                            Hood hood = Objects.requireNonNull(task.getResult()).toObject(Hood.class);
-                                                            assert hood != null;
-                                                            if(hood.getFallower() != null){
-                                                                if(hood.getFallower().size() != 0){
-                                                                    if(hood.getFallower().contains(FirebaseAuth.getInstance().getUid()))
-                                                                        members.add(post);
+                                                            if(task.isSuccessful()){
+
+                                                                User postUser = task.getResult().toObject(User.class);
+
+                                                                if(postUser != null){
+                                                                    if(postUser.getN_id() != null){
+                                                                        mDb.collection(getString(R.string.collection_hoods)).document(postUser.getN_id()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                                            @Override
+                                                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                                                Hood hood = Objects.requireNonNull(task.getResult()).toObject(Hood.class);
+                                                                                assert hood != null;
+                                                                                if(hood.getFallower() != null){
+                                                                                    if(hood.getFallower().size() != 0){
+                                                                                        if(hood.getFallower().contains(FirebaseAuth.getInstance().getUid())){
+                                                                                            members.add(post);
+                                                                                        }else if(hood.getId().equals(user.getN_id())){
+                                                                                            members.add(post);
+                                                                                        }else {
+                                                                                            if(memberList != null){
+                                                                                                if(memberList.size() != 0){
+                                                                                                    if(memberList.contains(post.getU_id())){
+                                                                                                        members.add(post);
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                            if(freindList != null){
+                                                                                                if(freindList.size() != 0){
+                                                                                                    if(freindList.contains(post.getU_id())){
+                                                                                                        members.add(post);
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                            if(relativeList != null){
+                                                                                                if(relativeList.size() != 0){
+                                                                                                    if(relativeList.contains(post.getU_id())){
+                                                                                                        members.add(post);
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        });
+                                                                    }
+
                                                                 }
                                                             }
                                                         }
                                                     });
+
                                                 }else{
                                                     mDb.collection(getString(R.string.collection_users)).document(post.getU_id()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                                         @Override

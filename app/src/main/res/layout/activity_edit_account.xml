@@ -128,23 +128,22 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
-    <EditText
-        android:id="@+id/et_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_16sdp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:background="@null"
-        android:fontFamily="@font/dosis"
-        android:text="@string/hint_name"
-        android:textColor="@color/dark_grey"
-        android:textSize="@dimen/_13ssp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toStartOf="@+id/iv_name"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
+            android:fontFamily="@font/dosis"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toStartOf="@+id/iv_name"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <ImageView
         android:id="@+id/iv_name"
@@ -185,23 +184,22 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
-    <EditText
-        android:id="@+id/et_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_16sdp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="8dp"
-        android:background="@null"
-        android:fontFamily="@font/dosis"
-        android:text="@string/hint_username"
-        android:textColor="@color/dark_grey"
-        android:textSize="@dimen/_13ssp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toStartOf="@+id/iv_username"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
+            android:fontFamily="@font/dosis"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline7"
+            app:layout_constraintEnd_toStartOf="@+id/iv_username"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_username" />
 
     <ImageView
         android:id="@+id/iv_username"
@@ -229,21 +227,20 @@
     app:layout_constraintTop_toTopOf="@+id/guideline8"
     app:layout_constraintVertical_bias="0.545" />
 
-    <EditText
-        android:id="@+id/et_bio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_16sdp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="35dp"
-        android:background="@null"
-        android:fontFamily="@font/dosis"
-        android:text="@string/house_bio"
-        android:textColor="@color/dark_grey"
-        android:textSize="@dimen/_13ssp"
-        app:layout_constraintEnd_toStartOf="@+id/iv_bio"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bio" />
+        <EditText
+            android:id="@+id/et_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="35dp"
+            android:background="@null"
+            android:fontFamily="@font/dosis"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_bio"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bio" />
 
     <ImageView
         android:id="@+id/iv_bio"

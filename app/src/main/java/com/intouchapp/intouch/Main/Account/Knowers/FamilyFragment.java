@@ -84,18 +84,22 @@ public class FamilyFragment extends Fragment {
                                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                         if (task.isSuccessful()) {
                                             House house = Objects.requireNonNull(task.getResult()).toObject(House.class);
-                                            assert house != null;
-                                            if (house.getMembers() != null) {
-                                                if (house.getMembers().size() != 0) {
-                                                    Log.d(TAG, "onComplete: get member list");
-                                                    memberList.addAll(house.getMembers());
-                                                    Log.d(TAG, "onComplete:memberList " + memberList);
-                                                    memberList.remove(FirebaseAuth.getInstance().getUid());
+                                            if(house != null){
+                                                if (house.getMembers() != null) {
+                                                    if (house.getMembers().size() != 0) {
+                                                        Log.d(TAG, "onComplete: get member list");
+                                                        memberList.addAll(house.getMembers());
+                                                        Log.d(TAG, "onComplete:memberList " + memberList);
+                                                        memberList.remove(FirebaseAuth.getInstance().getUid());
+                                                        settingRecyclerView(memberList);
+                                                    }
+                                                }else{
                                                     settingRecyclerView(memberList);
                                                 }
                                             }else{
                                                 settingRecyclerView(memberList);
                                             }
+
                                         }
                                     }
                                 });

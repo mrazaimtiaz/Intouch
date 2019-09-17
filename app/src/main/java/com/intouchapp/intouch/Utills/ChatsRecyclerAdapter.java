@@ -85,180 +85,184 @@ public class ChatsRecyclerAdapter extends RecyclerView.Adapter<ChatsRecyclerAdap
 
                             if(task.isSuccessful()){
                                 User user = task.getResult().toObject(User.class);
-                                holder.mMemberName.setText(user.getName());
 
-                                holder.mType.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_person_24px));
-                                if(relativeList != null){
-                                    Log.d(TAG, "onComplete: post recycler relativelist" + relativeList);
-                                    if(relativeList.size() != 0){
-                                        if(relativeList.contains(chats.get(position).getId2())){
-                                            publicType = false;
-                                            UniversalImageLoader.setImage(user.getRel_avatar(), holder.mMemberAvatar, null, "",mContext);
-                                            holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_red_ellipse));
+                                if(user != null){
+                                    holder.mMemberName.setText(user.getName());
 
-                                            holder.mMemberName.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
-                                                }
-                                            });
-                                            holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
-                                                }
-                                            });
-                                            holder.mChat.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
-                                                }
-                                            });
+                                    holder.mType.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_person_24px));
+                                    if(relativeList != null){
+                                        Log.d(TAG, "onComplete: post recycler relativelist" + relativeList);
+                                        if(relativeList.size() != 0){
+                                            if(relativeList.contains(chats.get(position).getId2())){
+                                                publicType = false;
+                                                UniversalImageLoader.setImage(user.getRel_avatar(), holder.mMemberAvatar, null, "",mContext);
+                                                holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_red_ellipse));
 
-                                            holder.mType.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
-                                                }
-                                            });
+                                                holder.mMemberName.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
+                                                    }
+                                                });
+                                                holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
+                                                    }
+                                                });
+                                                holder.mChat.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
+                                                    }
+                                                });
+
+                                                holder.mType.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
+                                                    }
+                                                });
 
 
+                                            }
                                         }
                                     }
-                                }
-                                if(freindList != null){
-                                    Log.d(TAG, "onComplete: post recycler freindList" + freindList);
-                                    if(freindList.size() != 0){
-                                        if(freindList.contains(chats.get(position).getId2())){
-                                            publicType = false;
+                                    if(freindList != null){
+                                        Log.d(TAG, "onComplete: post recycler freindList" + freindList);
+                                        if(freindList.size() != 0){
+                                            if(freindList.contains(chats.get(position).getId2())){
+                                                publicType = false;
 
-                                            UniversalImageLoader.setImage(user.getFriend_avatar(), holder.mMemberAvatar, null, "",mContext);
-                                            holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_blue_ellipse));
+                                                UniversalImageLoader.setImage(user.getFriend_avatar(), holder.mMemberAvatar, null, "",mContext);
+                                                holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_blue_ellipse));
 
-                                            holder.mMemberName.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
-                                                }
-                                            });
-                                            holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
-                                                }
-                                            });
-                                            holder.mChat.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
-                                                }
-                                            });
+                                                holder.mMemberName.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
+                                                    }
+                                                });
+                                                holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
+                                                    }
+                                                });
+                                                holder.mChat.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
+                                                    }
+                                                });
 
-                                            holder.mType.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
-                                                }
-                                            });
+                                                holder.mType.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
+                                                    }
+                                                });
 
 
+                                            }
                                         }
                                     }
-                                }
-                                if(memberlist != null){
-                                    Log.d(TAG, "onComplete: post recycler memberlist" + memberlist);
-                                    if(memberlist.size() != 0){
-                                        if(memberlist.contains(chats.get(position).getId2())){
-                                            publicType = false;
-                                            UniversalImageLoader.setImage(user.getFamily_avatar(), holder.mMemberAvatar, null, "",mContext);
-                                            holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_green_ellipse));
+                                    if(memberlist != null){
+                                        Log.d(TAG, "onComplete: post recycler memberlist" + memberlist);
+                                        if(memberlist.size() != 0){
+                                            if(memberlist.contains(chats.get(position).getId2())){
+                                                publicType = false;
+                                                UniversalImageLoader.setImage(user.getFamily_avatar(), holder.mMemberAvatar, null, "",mContext);
+                                                holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_green_ellipse));
 
 
-                                            holder.mMemberName.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                holder.mMemberName.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
-                                            holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                    }
+                                                });
+                                                holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
-                                            holder.mChat.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                    }
+                                                });
+                                                holder.mChat.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
+                                                    }
+                                                });
 
-                                            holder.mType.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                holder.mType.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId2());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
+                                                    }
+                                                });
 
 
+                                            }
                                         }
                                     }
+                                    if(publicType){
+                                        UniversalImageLoader.setImage(user.getPublic_avatar(), holder.mMemberAvatar, null, "",mContext);
+                                    }
                                 }
-                                if(publicType){
-                                    UniversalImageLoader.setImage(user.getPublic_avatar(), holder.mMemberAvatar, null, "",mContext);
-                                }
+
                             }
                         }
                     });
@@ -270,186 +274,190 @@ public class ChatsRecyclerAdapter extends RecyclerView.Adapter<ChatsRecyclerAdap
 
                             if(task.isSuccessful()){
                                 User user = task.getResult().toObject(User.class);
-                                holder.mMemberName.setText(user.getName());
-                                holder.mType.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_person_24px));
-                                if(relativeList != null){
-                                    Log.d(TAG, "onComplete: post recycler relativelist" + relativeList);
-                                    if(relativeList.size() != 0){
-                                        if(relativeList.contains(chats.get(position).getId1())){
-                                            publicType = false;
-                                            UniversalImageLoader.setImage(user.getRel_avatar(), holder.mMemberAvatar, null, "",mContext);
-                                            holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_red_ellipse));
 
-                                            holder.mMemberName.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                if(user != null){
+                                    holder.mMemberName.setText(user.getName());
+                                    holder.mType.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_person_24px));
+                                    if(relativeList != null){
+                                        Log.d(TAG, "onComplete: post recycler relativelist" + relativeList);
+                                        if(relativeList.size() != 0){
+                                            if(relativeList.contains(chats.get(position).getId1())){
+                                                publicType = false;
+                                                UniversalImageLoader.setImage(user.getRel_avatar(), holder.mMemberAvatar, null, "",mContext);
+                                                holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_red_ellipse));
 
-                                                }
-                                            });
-                                            holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                holder.mMemberName.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
-                                            holder.mChat.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                    }
+                                                });
+                                                holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
+                                                    }
+                                                });
+                                                holder.mChat.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                            holder.mType.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                    }
+                                                });
 
-                                                }
-                                            });
+                                                holder.mType.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_relative));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
+
+                                                    }
+                                                });
 
 
+                                            }
                                         }
                                     }
-                                }
-                                if(freindList != null){
-                                    Log.d(TAG, "onComplete: post recycler freindList" + freindList);
-                                    if(freindList.size() != 0){
-                                        if(freindList.contains(chats.get(position).getId1())){
-                                            publicType = false;
+                                    if(freindList != null){
+                                        Log.d(TAG, "onComplete: post recycler freindList" + freindList);
+                                        if(freindList.size() != 0){
+                                            if(freindList.contains(chats.get(position).getId1())){
+                                                publicType = false;
 
-                                            UniversalImageLoader.setImage(user.getFriend_avatar(), holder.mMemberAvatar, null, "",mContext);
-                                            holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_blue_ellipse));
+                                                UniversalImageLoader.setImage(user.getFriend_avatar(), holder.mMemberAvatar, null, "",mContext);
+                                                holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_blue_ellipse));
 
-                                            holder.mMemberName.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                holder.mMemberName.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
-                                            holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                    }
+                                                });
+                                                holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
-                                            holder.mChat.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                    }
+                                                });
+                                                holder.mChat.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
+                                                    }
+                                                });
 
-                                            holder.mType.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                holder.mType.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_friend));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
+                                                    }
+                                                });
 
 
+                                            }
                                         }
                                     }
-                                }
-                                if(memberlist != null){
-                                    Log.d(TAG, "onComplete: post recycler memberlist" + memberlist);
-                                    if(memberlist.size() != 0){
-                                        if(memberlist.contains(chats.get(position).getId1())){
-                                            publicType = false;
-                                            UniversalImageLoader.setImage(user.getFamily_avatar(), holder.mMemberAvatar, null, "",mContext);
-                                            holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_green_ellipse));
+                                    if(memberlist != null){
+                                        Log.d(TAG, "onComplete: post recycler memberlist" + memberlist);
+                                        if(memberlist.size() != 0){
+                                            if(memberlist.contains(chats.get(position).getId1())){
+                                                publicType = false;
+                                                UniversalImageLoader.setImage(user.getFamily_avatar(), holder.mMemberAvatar, null, "",mContext);
+                                                holder.mEllipse.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_green_ellipse));
 
-                                            holder.mMemberName.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                holder.mMemberName.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
-                                            holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                    }
+                                                });
+                                                holder.mMemberAvatar.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
-                                            holder.mChat.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                    }
+                                                });
+                                                holder.mChat.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
+                                                    }
+                                                });
 
-                                            holder.mType.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(mContext, IndividualChatActivity.class);
-                                                    intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
-                                                    intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
-                                                    intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
-                                                    mContext.startActivity(intent);
+                                                holder.mType.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intent = new Intent(mContext, IndividualChatActivity.class);
+                                                        intent.putExtra(mContext.getString(R.string.intent_memberid),chats.get(position).getId1());
+                                                        intent.putExtra(mContext.getString(R.string.intent_type),mContext.getString(R.string.type_member));
+                                                        intent.putExtra(mContext.getString(R.string.intent_chat),mContext.getString(R.string.individual_chat));
+                                                        mContext.startActivity(intent);
 
-                                                }
-                                            });
+                                                    }
+                                                });
 
 
+                                            }
                                         }
                                     }
+                                    if(publicType){
+                                        UniversalImageLoader.setImage(user.getPublic_avatar(), holder.mMemberAvatar, null, "",mContext);
+                                    }
                                 }
-                                if(publicType){
-                                    UniversalImageLoader.setImage(user.getPublic_avatar(), holder.mMemberAvatar, null, "",mContext);
-                                }
+
                             }
                         }
                     });

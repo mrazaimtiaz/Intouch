@@ -152,6 +152,7 @@
         android:layout_marginTop="@dimen/_50sdp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_35sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,18 +164,14 @@
     <com.google.android.material.tabs.TabLayout
 
         android:id="@+id/tab_layout"
-        android:alpha="0.5"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view_pager"
-        app:layout_constraintTop_toBottomOf="@+id/view_pager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.571"
-        app:tabBackground="@drawable/tab_selector"
-        app:tabIndicatorFullWidth="true"
-        app:tabIndicatorHeight="0dp"
-        app:tabMaxWidth="@dimen/_35sdp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:tabIndicatorColor="@android:color/black"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/dark_grey" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

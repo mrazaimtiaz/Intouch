@@ -74,6 +74,7 @@ public class ChatsActivity extends AppCompatActivity {
 
         ownUser =  ((UserClient) (mContext.getApplicationContext())).getUser();
 
+        mFloat.bringToFront();
         mDb = FirebaseFirestore.getInstance();
 
         mMain.setVisibility(View.GONE);

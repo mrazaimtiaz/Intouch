@@ -71,6 +71,10 @@
     //classes
     <string name="empty">empty</string>
 
+    <string name="Phone_Number">رقم الهاتف المحمول</string>
+    <string name="verification_only">للتحقق فقط</string>
+    <string name="Verification_code_send_to">إرسال رمز التحقق إلى</string>
+
 
     //error
     <string name="error_badly_formatted">The email address is badly formatted.</string>

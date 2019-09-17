@@ -193,6 +193,11 @@
     //marker home
     <string name="new_house">نیا مکان بنانے کے لئے کلک کریں۔</string>
 
+    <string name="Phone_Number">موبائل نمبر</string>
+    <string name="verification_only">صرف تصدیق کے لئے</string>
+    <string name="Verification_code_send_to">
+توثیقی کوڈ بھیجیں</string>
+
 
     //introduction
     <string name="btn_login">میں لاگ ان کریں</string>

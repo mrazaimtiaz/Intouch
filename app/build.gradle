@@ -43,6 +43,8 @@ dependencies {
 
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.1'
 
+    implementation 'com.hbb20:ccp:2.3.2'
+
     //Circle ImageView
     implementation 'de.hdodenhof:circleimageview:2.2.0'
 
